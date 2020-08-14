@@ -9,7 +9,7 @@ This is ...
 1) Visual studio 2019 install
 [Visual Studio 2019 Download ](https://visualstudio.microsoft.com/downloads/)
 2) .Net framework4.8
-[.Net framework4.8 Download] (https://dotnet.microsoft.com/download)
+[.Net framework4.8 Download](https://dotnet.microsoft.com/download)
 3) add toolbar on arcgis pro
 [Intructions](https://awesomeopensource.com/project/Esri/arcgis-pro-sdk-community-samples)
 '''
