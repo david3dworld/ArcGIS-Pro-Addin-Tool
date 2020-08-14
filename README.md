@@ -5,9 +5,10 @@ This is ...
 ## Installation
 This is ...
 
-'''bash
-Visual studio 2019 install
-.Net
+''' bash
+1) Visual studio 2019 install
+2) .Net framework4.8
+3) add toolbar on arcgis pro
 '''
 
 ## Usage
