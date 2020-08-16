@@ -86,12 +86,6 @@ The add-in is marked with a message that it has been deleted. It is still visibl
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-20B05D95-6002-4D97-B70D-271710F5D6B6-web.png)
 
 
-
-## How to add toolbar on arcgispro
-
-This is
-
-
 ## Usage
 
 ```C#
