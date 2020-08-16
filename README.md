@@ -1,6 +1,5 @@
 # ArcGIS-Pro-Addin-Tool
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-20B05D95-6002-4D97-B70D-271710F5D6B6-web.png)
 
 
 ### Table of Contents
@@ -63,6 +62,8 @@ Once an add-in has been validated and installed, you can view it in the Add-In M
 1. From an open project, click the Project tab on the ribbon. Alternatively, on the ArcGIS Pro start page, click Settings Settings in the lower left corner.
 
 2. In the list on the left, click Add-In Manager.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-573CBC5C-DE1D-4843-B45F-D5772F380C95-web.png)
 
 3. When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files. After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager. The Add-Ins tab provides information about available add-ins.
 =======
