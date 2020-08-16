@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,41 @@ namespace Ag_Analytics_Toolbar
     {
         protected override async void OnClick()
         {
-            if(MapView.Active == null)
+            string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+            string featureClassName = "AOI_Polygon_" + timestamp;
+
+            List<object> arguments = new List<object>
+            {
+                // store the results in the default geodatabase
+                CoreModule.CurrentProject.DefaultGeodatabasePath,
+                // name of the feature class
+                featureClassName,
+                // type of geometry
+                "POLYGON",  //POINT,POLYLINE,POLYGON...
+                // no template
+                "",
+                // no z values
+                "DISABLED",
+                // no m values
+                "DISABLED"
+            };
+            
+            await QueuedTask.Run(() =>
+            {
+                // spatial reference
+                arguments.Add(SpatialReferenceBuilder.CreateSpatialReference(4326)); //3857
+            });
+
+            var parameters = Geoprocessing.MakeValueArray(arguments.ToArray());
+            
+            Geoprocessing.OpenToolDialog("management.CreateFeatureclass", parameters);
+
+            //await CreateAOILayer();
+        }
+        
+        private async Task CreateAOILayer()
+        {
+            if (MapView.Active == null)
             {
                 ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Map is not active");
                 return;
@@ -38,6 +73,7 @@ namespace Ag_Analytics_Toolbar
 
             createAOIDialog.Hide();
         }
+
         private static async Task CreateFeatureClass(string featureclassName, string featureclassType)
         {
             List<object> arguments = new List<object>

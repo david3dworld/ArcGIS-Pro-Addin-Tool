@@ -11,13 +11,13 @@
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
   </AddInInfo>
   <modules>
-	
     <insertModule id="Ag_Analytics_Toolbar_Module" className="Ag_Analytics_Module" autoLoad="false" caption="Ag Analytics Module">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
         <tab id="Ag_Analytics_Toolbar_Tab" caption="Ag-Analytics" keytip="AG">
           <group refID="Ag_Analytics_Toolbar_Group_APIs" />
           <group refID="Ag_Analytics_Toolbar_Group_Utilities" />
+          <group refID="Ag_Analytics_Toolbar_Group_Add_AOI_Layers" />
           <group refID="Ag_Analytics_Toolbar_Group_Edit_AOI_Layers" />
           <group refID="Ag_Analytics_Toolbar_Group_More" />
         </tab>
@@ -26,18 +26,23 @@
         <group id="Ag_Analytics_Toolbar_Group_APIs" caption="APIs" appearsOnAddInTab="false" keytip="GA">
           <button refID="Ag_Analytics_Toolbar_HLS_Service_HLSDockpane_ShowButton" size="large" />
           <button refID="Ag_Analytics_Toolbar_DEM_Service_DEMServiceDockpane_ShowButton" size="large" />
-		  <button refID="Ag_Analytics_Toolbar_YieldAI_YieldAIDockpane_ShowButton" size="large" />
+          <button refID="Ag_Analytics_Toolbar_YieldAI_YieldAIDockpane_ShowButton" size="large" />
           <button refID="Button_CLU_Boundary" size="large" />
           <button refID="Button_Cropland_Data_Layers" size="large" />
+          <button refID="Ag_Analytics_Toolbar_ButtonRasterToPolygon" size="large" />
         </group>
         <group id="Ag_Analytics_Toolbar_Group_Utilities" caption="Utilities" appearsOnAddInTab="false" keytip="GU">
           <button refID="Button_ProfitLayers" size="large" />
           <button refID="Button_ADAPT" size="large" />
         </group>
-        <group id="Ag_Analytics_Toolbar_Group_Edit_AOI_Layers" caption="Edit AOI Layers" appearsOnAddInTab="false" keytip="GE">
+        <group id="Ag_Analytics_Toolbar_Group_Add_AOI_Layers" caption="Add AOI Layers" appearsOnAddInTab="false" keytip="GAL">
           <!--<button refID="Ag_Analytics_Toolbar_Button_AddAOILayers" size="large" />-->
           <button refID="esri_mapping_addDataButton" size="large" />
           <button refID="Ag_Analytics_Toolbar_Button_CreateAOILayer" size="large" />
+          <button refID="Ag_Analytics_Toolbar_Button_AddGeoJSON" size="large" />
+		  <button refID="Ag_Analytics_Toolbar_Button_RasterToPolygon" size="large" />
+		</group>
+        <group id="Ag_Analytics_Toolbar_Group_Edit_AOI_Layers" caption="Edit AOI Layers" appearsOnAddInTab="false" keytip="GE">
           <button refID="esri_editing_ShowCreateFeaturesBtn" size="large" />
           <button refID="esri_editing_ShowEditFeaturesBtn" size="large" />
           <tool refID="esri_mapping_selectByRectangleTool" size="large" />
@@ -55,23 +60,20 @@
       </groups>
       <controls>
         <button id="Ag_Analytics_Toolbar_HLS_Service_HLSDockpane_ShowButton" caption="HLS Service" className="Ag_Analytics_Toolbar.HLS_Service.HLSDockpane_ShowButton" loadOnClick="true" smallImage="Images\HLS_16.png" largeImage="Images\HLS_32.png" keytip="BH">
-            <tooltip heading="Harmonized Landsat Sentinel (HLS) Service">
+          <tooltip heading="Harmonized Landsat Sentinel (HLS) Service">
 				The Ag-Analytics HLS API provides service in which a user can provide a polygon in specific formats with additional customized options to retrieve the dynamics of their land at various times from the Landsat-8 and Sentinel-2 satellites. This service provides information on cloud cover, statistics, Normalized Difference Vegetation Index in addition to MSI bands information.
-				<disabledText />
-		    </tooltip>
+				<disabledText /></tooltip>
         </button>
         <button id="Ag_Analytics_Toolbar_DEM_Service_DEMServiceDockpane_ShowButton" caption="DEM Service" className="Ag_Analytics_Toolbar.DEM_Service.DEMServiceDockpane_ShowButton" loadOnClick="true" smallImage="Images\DEM_16.png" largeImage="Images\DEM_32.png" keytip="BD">
           <tooltip heading="Digital Elevation Model (DEM) Service">
 			  The Ag-Analytics® DEM Service API allows for clipping boundaries to the 10 meter USGS DEM map of the United States.
-			  <disabledText />
-		  </tooltip>
+			  <disabledText /></tooltip>
         </button>
-		<button id="Ag_Analytics_Toolbar_YieldAI_YieldAIDockpane_ShowButton" caption="YieldAI Service" className="Ag_Analytics_Toolbar.YieldAI.YieldAIDockpane_ShowButton" loadOnClick="true" smallImage="Images\Yield_16.png" largeImage="Images\Yield_32.png" keytip="BY">
-			<tooltip heading="YieldAI(beta)">
+        <button id="Ag_Analytics_Toolbar_YieldAI_YieldAIDockpane_ShowButton" caption="YieldAI Service" className="Ag_Analytics_Toolbar.YieldAI.YieldAIDockpane_ShowButton" loadOnClick="true" smallImage="Images\Yield_16.png" largeImage="Images\Yield_32.png" keytip="BY">
+          <tooltip heading="YieldAI(beta)">
 				The Ag-Analytics® Yield Forecast API uses Artificial Intelligence algorithms to forecast the yield on a given field, based on geospatial data.
-				<disabledText />
-			</tooltip>
-		</button>
+				<disabledText /></tooltip>
+        </button>
         <button id="Button_CLU_Boundary" caption="CLU Boundary" className="ButtonCLU" smallImage="Images\CLU_Boundary_16.png" largeImage="Images\CLU_Boundary_32.png" keytip="BC"></button>
         <button id="Button_Cropland_Data_Layers" caption="Cropland Data Layers" className="ButtonCropLand" smallImage="Images\Cropland_16.png" largeImage="Images\Cropland_32.png" keytip="BCR"></button>
         <button id="Button_ProfitLayers" caption="ProfitLayers" className="ButtonProfitLayers" smallImage="Images\leaf_16.png" largeImage="Images\leaf_32.png" keytip="BP"></button>
@@ -85,17 +87,26 @@
         <button id="Ag_Analytics_Toolbar_Button_Help" caption="Help" className="ButtonHelp" loadOnClick="true" smallImage="Images\help_16.png" largeImage="Images\help_32.png" keytip="BHE">
           <tooltip heading="API Help">
 		      You can visit help details for API reference
-		      <disabledText />
-		  </tooltip>
+		      <disabledText /></tooltip>
         </button>
         <button id="Ag_Analytics_Toolbar_Button_CreateAOILayer" caption="Create AOI Polygon" className="ButtonCreateAOILayer" loadOnClick="true" smallImage="Images\AddDB_16.png" largeImage="Images\AddDB_32.png" keytip="BCAOI">
           <tooltip heading="Create AOI Layer">
-		     You can create automatically a new AOI polygon layer with WGS84 coordinate system on the current map. If you don't want this, you can also create on view/catalog pane or catalog view.
-			 <disabledText />
-		  </tooltip>
+		     You can create a new polygon feature class for area of interest. If you don't want this, you can also create on view/catalog pane or catalog view.
+			 <disabledText /></tooltip>
         </button>
         <button id="Ag_Analytics_Toolbar_Button_AddAOILayers" caption="Add AOI Layers" className="ButtonAddAOILayers" loadOnClick="true" keytip="BAAOI" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddContent16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/AddContent32.png">
           <tooltip heading="Add AOI Layers">Please import add polygon layers for AOI parameter.<disabledText /></tooltip>
+        </button>
+        <button id="Ag_Analytics_Toolbar_Button_AddGeoJSON" caption="Add GeoJSON" className="ButtonAddGeoJSON" loadOnClick="true" keytip="BAGJ" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditCopy16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditCopy32.png">
+          <tooltip heading="Add GeoJSON">
+			  You can convert from GeoJSON files to polygon feature class and import on the map for area of interest.
+			  <disabledText /></tooltip>
+        </button>
+        <button id="Ag_Analytics_Toolbar_Button_RasterToPolygon" caption="Add Polygon From Raster" className="ButtonRasterToPolygon" loadOnClick="true" keytip="BR" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png">
+          <tooltip heading="Add Polygon Feature Class from Raster">
+			  You can convert from Raster to polygon feature class and import on the map for area of interest.
+			  <disabledText />
+		  </tooltip>
         </button>
       </controls>
       <dockPanes>

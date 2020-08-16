@@ -34,32 +34,34 @@ using ArcGIS.Desktop.Mapping.Controls;
 using ArcGIS.Desktop.Mapping.Events;
 using ArcGIS.Desktop.Core.Geoprocessing;
 
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 
 namespace Ag_Analytics_Toolbar.YieldAI
 {
-    internal class YieldAIDockpaneViewModel : DockPane
+    internal class YieldAIDockpaneViewModel : DockPane, IDataErrorInfo
     {
         private const string _dockPaneID = "Ag_Analytics_Toolbar_YieldAI_YieldAIDockpane";
-        
-        private ObservableCollection<FeatureLayer> _polygonFeatureLayers = new ObservableCollection<FeatureLayer>();
-        private FeatureLayer _selectedPolygonFeatureLayer = null;
+
+        private string validationInputError = null;
+        private string _validationSubmitError = null;
+
+        private ObservableCollection<FeatureLayer> _AOILayers = new ObservableCollection<FeatureLayer>();
+        private FeatureLayer _selectedAOILayer = null;
 
         private ObservableCollection<string> _modelNames = new ObservableCollection<string>();
-        private string _selectedModelName = "";
+        private string _selectedModelName = null;
 
         private ObservableCollection<string> _cropSeasons = new ObservableCollection<string>();
-        private string _selectedCropSeason = "";
+        private string _selectedCropSeason = null;
 
         private DateTime _plantingDay1 = DateTime.Now;
         private DateTime _harvestDay = DateTime.Now;
 
         private int _seedingDensity = 30000;
 
-        private string _downloadPath = "";
+        private string _downloadPath = null;
 
         private readonly ICommand _zoomToLayerCommand;
         public ICommand ZoomToLayerCommand => _zoomToLayerCommand;
@@ -90,7 +92,7 @@ namespace Ag_Analytics_Toolbar.YieldAI
             _submitCommand = new RelayCommand(() => SubmitExecute(), () => true);
             _cancelCommand = new RelayCommand(() => CancelExecute(), () => true);
 
-            SetPolygonFeatureLayers();
+            SetAOILayers();
         }
 
         /// <summary>
@@ -134,6 +136,7 @@ namespace Ag_Analytics_Toolbar.YieldAI
 
         protected override Task InitializeAsync()
         {
+            ProjectItemsChangedEvent.Subscribe(OnProjectCollectionChanged);
             ActiveMapViewChangedEvent.Subscribe(OnActiveMapViewChangedEvent);
 
             LayersAddedEvent.Subscribe(OnLayersAddedEvent);
@@ -142,59 +145,66 @@ namespace Ag_Analytics_Toolbar.YieldAI
             return base.InitializeAsync();
         }
 
+        private void OnProjectCollectionChanged(ProjectItemsChangedEventArgs args)
+        {
+            SetAOILayers();
+            //DownloadPath = Path.GetDirectoryName(Project.Current.URI);
+            DownloadPath = Project.Current.DefaultGeodatabasePath;
+        }
+
         private void OnActiveMapViewChangedEvent(ActiveMapViewChangedEventArgs obj)
         {
 
             if (obj.IncomingView == null)
             {
                 // there is no active map view - disable the UI
-                PolygonFeatureLayers = null;
-                SelectedPolygonFeatureLayer = null;
+                AOILayers = null;
+                SelectedAOILayer = null;
                 return;
             }
             // we have an active map view - enable the UI
-            SetPolygonFeatureLayers();
+            SetAOILayers();
 
         }
 
         private void OnLayersAddedEvent(LayerEventsArgs args)
         {
-            SetPolygonFeatureLayers();
+            SetAOILayers();
         }
 
         private void OnLayersRemovedEvent(LayerEventsArgs args)
         {
-            SetPolygonFeatureLayers();
+            SetAOILayers();
         }
 
         public async void ZoomToLayerExecute()
         {
             if (MapView.Active != null)
             {
-                if (_selectedPolygonFeatureLayer != null)
+                if (_selectedAOILayer != null)
                 {
-                    await MapView.Active.ZoomToAsync(_selectedPolygonFeatureLayer);
+                    await MapView.Active.ZoomToAsync(_selectedAOILayer);
                 }
             }
         }
 
-        public ObservableCollection<FeatureLayer> PolygonFeatureLayers
+        public ObservableCollection<FeatureLayer> AOILayers
         {
-            get { return _polygonFeatureLayers; }
+            get { return _AOILayers; }
             set
             {
-                SetProperty(ref _polygonFeatureLayers, value, () => PolygonFeatureLayers);
+                SetProperty(ref _AOILayers, value, () => AOILayers);
             }
 
         }
 
-        public FeatureLayer SelectedPolygonFeatureLayer
+        public FeatureLayer SelectedAOILayer
         {
-            get { return _selectedPolygonFeatureLayer; }
+            get { return _selectedAOILayer; }
 
             set
             {
-                SetProperty(ref _selectedPolygonFeatureLayer, value, () => SelectedPolygonFeatureLayer);
+                SetProperty(ref _selectedAOILayer, value, () => SelectedAOILayer);
             }
         }
 
@@ -302,7 +312,7 @@ namespace Ag_Analytics_Toolbar.YieldAI
             }
         }
 
-        private void SetPolygonFeatureLayers()
+        private async void SetAOILayers()
         {
             try
             {
@@ -310,7 +320,7 @@ namespace Ag_Analytics_Toolbar.YieldAI
                 //Map _map = await GetMapFromProject(Project.Current, "Map");
                 if (MapView.Active == null)
                 {
-                    //ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("SetPolygonFeatureLayers: map is not active.");
+                    //ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("SetAOILayers: map is not active.");
                     return;
                 }
 
@@ -318,23 +328,27 @@ namespace Ag_Analytics_Toolbar.YieldAI
 
                 List<FeatureLayer> featureLayerList = _map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
 
-                ObservableCollection<FeatureLayer> newPolygonFeatureLayers = new ObservableCollection<FeatureLayer>();
+                ObservableCollection<FeatureLayer> newAOILayers = new ObservableCollection<FeatureLayer>();
 
                 foreach (FeatureLayer featureLayer in featureLayerList)
                 {
                     if (featureLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
                     {
-                        newPolygonFeatureLayers.Add(featureLayer);
+                        int featureCount = await QueuedTask.Run(() => { return featureLayer.GetFeatureClass().GetCount(); });
+                        if (featureCount < 2)
+                        {
+                            newAOILayers.Add(featureLayer);
+                        }
                     }
                 }
-                PolygonFeatureLayers = newPolygonFeatureLayers;
-                if (PolygonFeatureLayers.Count > 0)
+                AOILayers = newAOILayers;
+                if (AOILayers.Count > 0)
                 {
-                    SelectedPolygonFeatureLayer = PolygonFeatureLayers.First();
+                    SelectedAOILayer = AOILayers.First();
                 }
                 else
                 {
-                    SelectedPolygonFeatureLayer = null;
+                    SelectedAOILayer = null;
                 }
             }
             catch (Exception exc)
@@ -347,29 +361,58 @@ namespace Ag_Analytics_Toolbar.YieldAI
 
         public async void SubmitExecute()
         {
-            string aoi = "";
-            if (_selectedPolygonFeatureLayer != null)
+
+            ValidationSubmitError = null;
+
+            List<string> validationSubmitErrors = new List<string>();
+
+            string aoi = null;
+            if (_selectedAOILayer != null)
             {
-                aoi = await Ag_Analytics_Module.GetGeoJSONFromFeatureLayer(_selectedPolygonFeatureLayer);
+                int featureCount = await QueuedTask.Run(() => { return _selectedAOILayer.GetFeatureClass().GetCount(); });
+                if (featureCount == 0)
+                {
+                    validationSubmitErrors.Add("AOI is empty.");
+                }
+                else if (featureCount == 1)
+                {
+                    aoi = await Ag_Analytics_Module.GetGeoJSONFromFeatureLayer(_selectedAOILayer);
+                }
+                else if (featureCount > 1)
+                {
+                    validationSubmitErrors.Add("AOI must be contained only a polygon feature");
+                }
             }
             else
             {
-                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Please select AOI Layer");
-                return;
+                validationSubmitErrors.Add("AOI parameter must be selected.");
             }
 
-            if (_downloadPath == "")
+            if (DateTime.Compare(_plantingDay1, _harvestDay) >= 0)
             {
-                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Please set download folder path.");
-                return;
+                validationSubmitErrors.Add("PlantingDay1 must be earlier than HarvestDay.");
+            }
+
+            if (_downloadPath == null || string.IsNullOrEmpty(_downloadPath))
+            {
+                validationSubmitErrors.Add("Download path must be selected.");
             }
             else
             {
                 if (!Directory.Exists(_downloadPath))
                 {
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Download path Error!");
-                    return;
+                    validationSubmitErrors.Add("Download path doesn't exsist.");
                 }
+            }
+            
+            if (validationSubmitErrors.Count > 0)
+            {
+                ValidationSubmitError = string.Join("\n", validationSubmitErrors);
+                return;
+            }
+            if (validationInputError != null)
+            {
+                return;
             }
 
             ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog progressDialog;
@@ -482,6 +525,45 @@ namespace Ag_Analytics_Toolbar.YieldAI
                     await Ag_Analytics_Module.SetToClassifyColorizerFromLayerName(filename, 10, "Slope");
                 }
             });
+        }
+
+        public string ValidationSubmitError
+        {
+            get { return _validationSubmitError; }
+            set
+            {
+                SetProperty(ref _validationSubmitError, value, () => ValidationSubmitError);
+            }
+        }
+
+        public string Error
+        {
+            get
+
+            {
+                return this[string.Empty];
+            }
+        }
+
+        public string this[string cuurectname]
+        {
+            get
+            {
+                validationInputError = null;
+
+                switch (cuurectname)
+                {
+                    case "SeedingDensity":
+                        if (SeedingDensity < 0)
+                        {
+                            validationInputError = "Sedding Density must be > 0.";
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                return validationInputError;
+            }
         }
     }
 

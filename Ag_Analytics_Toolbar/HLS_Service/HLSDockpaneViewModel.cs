@@ -45,19 +45,22 @@ using Ag_Analytics_Toolbar.CoordinateSystemDialog;
 
 namespace Ag_Analytics_Toolbar.HLS_Service
 {
-    internal class HLSDockpaneViewModel : DockPane
+    internal class HLSDockpaneViewModel : DockPane, IDataErrorInfo
     {
         private const string _dockPaneID = "Ag_Analytics_Toolbar_HLS_Service_HLSDockpane";
 
         //private readonly object _lockCollection = new object();
+        
+        private string validationInputError = null;
+        private string _validationSubmitError = null;
 
-        private ObservableCollection<FeatureLayer> _polygonFeatureLayers = new ObservableCollection<FeatureLayer>();
-        private FeatureLayer _selectedPolygonFeatureLayer = null;
+        private ObservableCollection<FeatureLayer> _AOILayers = new ObservableCollection<FeatureLayer>();
+        private FeatureLayer _selectedAOILayer = null;
         
         private ObservableCollection<HLS_Band> _bands = new ObservableCollection<HLS_Band>();
 
         private ObservableCollection<string> _satellites = new ObservableCollection<string>();
-        private string _selectedSatellite = "";
+        private string _selectedSatellite = null;
 
         private bool _showDate = false;
         
@@ -74,8 +77,8 @@ namespace Ag_Analytics_Toolbar.HLS_Service
         private bool _checkflattendata = false;       
 
         private SpatialReference selectedSpatialReference =  null;
-        private string _coordinateSystem = "";
-        private string _downloadPath = "";
+        private string _coordinateSystem = null;
+        private string _downloadPath = null;
 
         private readonly ICommand _zoomToLayerCommand;
         public ICommand ZoomToLayerCommand => _zoomToLayerCommand;
@@ -118,10 +121,10 @@ namespace Ag_Analytics_Toolbar.HLS_Service
             _submitCommand = new RelayCommand(() => SubmitExecute(), () => true);
             _cancelCommand = new RelayCommand(() => CancelExecute(), () => true);
 
-            SetPolygonFeatureLayers();
+            SetAOILayers();
             
         }
-        
+
         protected override Task InitializeAsync()
         {
             
@@ -136,7 +139,7 @@ namespace Ag_Analytics_Toolbar.HLS_Service
         
         private void OnProjectCollectionChanged(ProjectItemsChangedEventArgs args)
         {
-            SetPolygonFeatureLayers();
+            SetAOILayers();
             //DownloadPath = Path.GetDirectoryName(Project.Current.URI);
             DownloadPath = Project.Current.DefaultGeodatabasePath;
         }
@@ -147,34 +150,25 @@ namespace Ag_Analytics_Toolbar.HLS_Service
             if (obj.IncomingView == null)
             {
                 // there is no active map view - disable the UI
-                PolygonFeatureLayers = null;
-                SelectedPolygonFeatureLayer = null;
+                AOILayers = null;
+                SelectedAOILayer = null;
                 return;
             }
             // we have an active map view - enable the UI
-            SetPolygonFeatureLayers();
+            SetAOILayers();
            
         }
         
         private void OnLayersAddedEvent(LayerEventsArgs args)
         {
-            /*
-            foreach (var newLayer in args.Layers)
-            {
-                if (newLayer.Map == MapView.Active.Map && newLayer is FeatureLayer)
-                {
-                    PolygonFeatureLayers.Add((FeatureLayer)newLayer);
-                }
-            }
-            */
-           
-            SetPolygonFeatureLayers();
+
+            SetAOILayers();
         }
 
         private void OnLayersRemovedEvent(LayerEventsArgs args)
         {
-           
-            SetPolygonFeatureLayers();
+
+            SetAOILayers();
         }
         
         /// <summary>
@@ -187,13 +181,12 @@ namespace Ag_Analytics_Toolbar.HLS_Service
             if (pane == null)
                 return;
             pane.Activate();
-            
         }
         
         /// <summary>
         /// Text shown near the top of the DockPane.
         /// </summary>
-        private string _heading = "HLS Request Parameters Setting";
+        private string _heading = "HLS Request Parameters";
         public string Heading
         {
             get { return _heading; }
@@ -217,23 +210,23 @@ namespace Ag_Analytics_Toolbar.HLS_Service
             pane.Hide();
         }
 
-        public ObservableCollection<FeatureLayer> PolygonFeatureLayers
+        public ObservableCollection<FeatureLayer> AOILayers
         {
-            get { return _polygonFeatureLayers; }
+            get { return _AOILayers; }
             set
             {
-                SetProperty(ref _polygonFeatureLayers, value, () => PolygonFeatureLayers);
+                SetProperty(ref _AOILayers, value, () => AOILayers);
             }
             
         }
 
-        public FeatureLayer SelectedPolygonFeatureLayer
+        public FeatureLayer SelectedAOILayer
         {
-            get {  return _selectedPolygonFeatureLayer;   }
+            get {  return _selectedAOILayer;   }
             
             set
             {
-                SetProperty(ref _selectedPolygonFeatureLayer, value, () => SelectedPolygonFeatureLayer);
+                SetProperty(ref _selectedAOILayer, value, () => SelectedAOILayer);
             }
         }
 
@@ -326,7 +319,7 @@ namespace Ag_Analytics_Toolbar.HLS_Service
                 SetProperty(ref _checkflattendata, value, () => ShowDate);
             }
         }
-
+        
         public float CellSize
         {
             get { return _cellSize; }
@@ -371,14 +364,14 @@ namespace Ag_Analytics_Toolbar.HLS_Service
                 SetProperty(ref _downloadPath, value, () => DownloadPath);
             }
         }
-        
+
         public async void ZoomToLayerExecute()
         {
             if(MapView.Active != null)
             {
-                if(_selectedPolygonFeatureLayer != null)
+                if(_selectedAOILayer != null)
                 {
-                    await MapView.Active.ZoomToAsync(_selectedPolygonFeatureLayer);
+                    await MapView.Active.ZoomToAsync(_selectedAOILayer);
                 }
             }
         }
@@ -411,7 +404,7 @@ namespace Ag_Analytics_Toolbar.HLS_Service
         {
             //Display the filter in an Open Item dialog
             BrowseProjectFilter bf = new BrowseProjectFilter();
-            bf.Name = "Folders and Geodatabases ";
+            bf.Name = "Folders and Geodatabases";
 
             bf.AddFilter(BrowseProjectFilter.GetFilter(ItemFilters.geodatabases));
             bf.AddFilter(BrowseProjectFilter.GetFilter(ItemFilters.folders));
@@ -442,18 +435,33 @@ namespace Ag_Analytics_Toolbar.HLS_Service
         public async void SubmitExecute()
         {
 
-            string aoi = "";
-            if (_selectedPolygonFeatureLayer != null)
+            ValidationSubmitError = null;
+
+            List<string> validationSubmitErrors = new List<string>();
+
+            string aoi = null;
+            if (_selectedAOILayer != null)
             {
-                aoi = await Ag_Analytics_Module.GetGeoJSONFromFeatureLayer(_selectedPolygonFeatureLayer);
+                int featureCount = await QueuedTask.Run(() => { return _selectedAOILayer.GetFeatureClass().GetCount(); });
+                if (featureCount == 0)
+                {
+                    validationSubmitErrors.Add("AOI is empty.");
+                }
+                else if (featureCount == 1)
+                {
+                    aoi = await Ag_Analytics_Module.GetGeoJSONFromFeatureLayer(_selectedAOILayer);
+                }
+                else if (featureCount > 1)
+                {
+                    validationSubmitErrors.Add("AOI must be contained only a polygon feature");
+                }
             }
             else
             {
-                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Please select AOI Layer");
-                return;
+                validationSubmitErrors.Add("AOI parameter must be selected.");
             }
 
-            string selectedBands = "";
+            string selectedBands = null;
             List<string> _selectedBands = new List<string>();
             foreach(var band in _bands)
             {
@@ -468,43 +476,52 @@ namespace Ag_Analytics_Toolbar.HLS_Service
             }
             else
             {
-                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Please select bands");
-                return;
+                validationSubmitErrors.Add("Bands must be selected");
             }
             
             //satellite: _selectedSatellite
             int _showLatest = _showDate ? 0 : 1;
             string startDate = String.Format("{0:M/d/yyyy}", _startDate);
             string endDate = String.Format("{0:M/d/yyyy}", _endDate);
-            
-            if(_qacloudperc < 0 || _qacloudperc > 100)
+
+            if (_showDate)
             {
-                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("qacloudperc input error: qacloudperc is between 0~100.");
-                return;
+                if (DateTime.Compare(_startDate, _endDate) >= 0)
+                {
+                    validationSubmitErrors.Add("Start Date must be earlier than End Date.");
+                }
             }
 
-            string coordSysString = "";
-            if (selectedSpatialReference == null)
+            if (_downloadPath == null || string.IsNullOrEmpty(_downloadPath))
             {
-                coordSysString = await QueuedTask.Run(() => { return _selectedPolygonFeatureLayer.GetSpatialReference().Wkt; });
-            }
-            else
-            {
-                coordSysString = selectedSpatialReference.Wkt;
-            }
-
-            if (_downloadPath == "")
-            {
-                ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Please set download folder path.");
-                return;
+                validationSubmitErrors.Add("Download path must be selected.");
             }
             else
             {
                 if (!Directory.Exists(_downloadPath))
                 {
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Download path Error!");
-                    return;
+                    validationSubmitErrors.Add("Download path doesn't exsist.");
                 }
+            }
+
+            if (validationSubmitErrors.Count > 0)
+            {
+                ValidationSubmitError = string.Join("\n", validationSubmitErrors);
+                return;
+            }
+            if(validationInputError != null)
+            {
+                return;
+            }
+            
+            string coordSysString = null;
+            if (selectedSpatialReference == null)
+            {
+                coordSysString = await QueuedTask.Run(() => { return _selectedAOILayer.GetSpatialReference().Wkt; });
+            }
+            else
+            {
+                coordSysString = selectedSpatialReference.Wkt;
             }
 
             ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog progressDialog;
@@ -629,7 +646,7 @@ namespace Ag_Analytics_Toolbar.HLS_Service
             });
         }
 
-        private void SetPolygonFeatureLayers()
+        private async void SetAOILayers()
         {
             try
             {
@@ -637,31 +654,37 @@ namespace Ag_Analytics_Toolbar.HLS_Service
                 //Map _map = await GetMapFromProject(Project.Current, "Map");
                 if(MapView.Active == null)
                 {
-                    //ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("SetPolygonFeatureLayers: map is not active.");
+                    //ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("SetAOILayers: map is not active.");
                     return;
                 }
                
                 var _map = MapView.Active.Map;
-                
-                List<FeatureLayer> featureLayerList = _map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
 
-                ObservableCollection<FeatureLayer> newPolygonFeatureLayers = new ObservableCollection<FeatureLayer>();
-                
-                foreach(FeatureLayer featureLayer in featureLayerList)
+                List<FeatureLayer> featureLayers = _map.GetLayersAsFlattenedList().OfType<FeatureLayer>().ToList();
+
+                ObservableCollection<FeatureLayer> newAOILayers = new ObservableCollection<FeatureLayer>();
+               
+                foreach(FeatureLayer lyr in featureLayers)
                 {
-                    if(featureLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
+                    if (lyr.ShapeType == esriGeometryType.esriGeometryPolygon)
                     {
-                        newPolygonFeatureLayers.Add(featureLayer);
+                        int featureCount = await QueuedTask.Run(() => { return lyr.GetFeatureClass().GetCount(); });
+                        if (featureCount < 2)
+                        {
+                            newAOILayers.Add(lyr);
+                        }
                     }
                 }
-                PolygonFeatureLayers = newPolygonFeatureLayers;
-                if(PolygonFeatureLayers.Count > 0)
+
+                AOILayers = newAOILayers;
+
+                if(AOILayers.Count > 0)
                 {
-                    SelectedPolygonFeatureLayer = PolygonFeatureLayers.First();
+                    SelectedAOILayer = AOILayers.First();
                 }
                 else
                 {
-                    SelectedPolygonFeatureLayer = null;
+                    SelectedAOILayer = null;
                 }
             }
             catch (Exception exc)
@@ -672,8 +695,59 @@ namespace Ag_Analytics_Toolbar.HLS_Service
             }
         }
 
-    }
+        public string ValidationSubmitError
+        {
+            get { return _validationSubmitError; }
+            set
+            {
+                SetProperty(ref _validationSubmitError, value, () => ValidationSubmitError);
+            }
+        }
 
+        public string Error
+        {
+            get
+
+            {
+                return this[string.Empty];
+            }
+        }
+
+        public string this[string cuurectname]
+        {
+            get
+            {
+                validationInputError = null;
+
+                switch (cuurectname)
+                {
+                    case "CellSize":
+
+                        if(CellSize < 1)
+                        {
+                            validationInputError = "Resolution must be > 1.";
+                        }
+                        break;
+                    case "QaCloudPerc":
+                        if(QaCloudPerc < 0 || QaCloudPerc > 100)
+                        {
+                            validationInputError = "This value Must be between 0 and 100.";
+                        }
+                        break;
+                    case "DisplayNormalValues":
+                        if (DisplayNormalValues < 0) {
+                            validationInputError = "This value Must be > 0.";
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+                return validationInputError;
+            }
+        }
+    }
+    
 
     public class HLS_Band
     {

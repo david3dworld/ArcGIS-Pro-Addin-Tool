@@ -14,19 +14,14 @@
                 <extensions:DesignOnlyResourceDictionary Source="pack://application:,,,/ArcGIS.Desktop.Framework;component\Themes\Default.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+        
     </UserControl.Resources>
-    <Validation.ErrorTemplate>
-        <ControlTemplate>
-            <StackPanel>
-                <AdornedElementPlaceholder/>
-                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
-            </StackPanel>
-        </ControlTemplate>
-    </Validation.ErrorTemplate>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
@@ -48,7 +43,7 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-                    <ComboBox Grid.Column="0" Margin="0,0,10,0" Name="comboboxAOIList" ItemsSource="{Binding PolygonFeatureLayers}" SelectedItem="{Binding SelectedPolygonFeatureLayer}" Grid.ColumnSpan="2" />
+                    <ComboBox Grid.Column="0" Margin="0,0,10,0" Name="comboboxAOIList" ItemsSource="{Binding AOILayers}" SelectedItem="{Binding SelectedAOILayer}" Grid.ColumnSpan="2" />
                     <Button Grid.Column="2" Background="Transparent" BorderThickness="0" ToolTip="Zoom To Layer" Command="{Binding ZoomToLayerCommand}">
                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/LayerZoomTo32.png" Width="20" Height="20"/>
                     </Button>
@@ -92,29 +87,59 @@
                     <TextBlock Grid.Column="0" VerticalAlignment="Center" Style="{DynamicResource Esri_TextBlockRegular}">End Date</TextBlock>
                     <DatePicker Grid.Column="1" BorderThickness="0" IsEnabled="{Binding ShowDate}" SelectedDate="{Binding EndDate}" />
                 </Grid>
-                <Grid Margin="0,5">
+                <Grid Margin="0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="7*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Margin="0,0,10,0" Style="{DynamicResource Esri_TextBlockRegular}">Resolution(meters)</TextBlock>
-                    <TextBox Grid.Column="1" TextAlignment="Right" Text="{Binding CellSize, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" TextAlignment="Right" Text="{Binding CellSize, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <StackPanel>
+                                    <!-- Placeholder for the TextBox itself -->
+                                    <AdornedElementPlaceholder x:Name="textBox"/>
+                                    <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
                 </Grid>
-                <Grid Margin="0,5">
+                <Grid Margin="0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="7*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Margin="0,0,10,0" Style="{DynamicResource Esri_TextBlockRegular}">qacloudperc</TextBlock>
-                    <TextBox Grid.Column="1" TextAlignment="Right" Text="{Binding QaCloudPerc}" />
+                    <TextBox Grid.Column="1" TextAlignment="Right" Text="{Binding QaCloudPerc, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <StackPanel>
+                                    <!-- Placeholder for the TextBox itself -->
+                                    <AdornedElementPlaceholder x:Name="textBox"/>
+                                    <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
                 </Grid>
-                <Grid Margin="0,5">
+                <Grid Margin="0,10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="7*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Margin="0,0,10,0" Style="{DynamicResource Esri_TextBlockRegular}">displaynormalvalues</TextBlock>
-                    <TextBox Grid.Column="1" TextAlignment="Right" Text="{Binding DisplayNormalValues}"/>
+                    <TextBox Grid.Column="1" TextAlignment="Right" Text="{Binding DisplayNormalValues, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <StackPanel>
+                                    <!-- Placeholder for the TextBox itself -->
+                                    <AdornedElementPlaceholder x:Name="textBox"/>
+                                    <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
                 </Grid>
 
                 <Grid  Margin="30,5,0,5">
@@ -146,17 +171,18 @@
                 <TextBlock Style="{DynamicResource Esri_TextBlockRegular}">Download Folder Path</TextBlock>
                 <Grid Margin="0,0,0,5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox Grid.Column="0" Margin="0,0,10,0" VerticalAlignment="Center" Text="{Binding DownloadPath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox Grid.Column="0" Margin="0,0,10,0" VerticalAlignment="Center" Text="{Binding DownloadPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <Button Grid.Column="1" Background="Transparent" BorderThickness="0" Command="{Binding DownloadPathCommand}">
                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/FolderOpenState32.png" Width="20" Height="20"></Image>
                     </Button>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-        <StackPanel Grid.Row="2" Margin="10,10" Orientation="Horizontal" HorizontalAlignment="Right">
+        <TextBlock Grid.Row="2" Margin="10,10" Style="{DynamicResource Esri_TextBlockRegular}" Text="{Binding ValidationSubmitError}" Foreground="Red"/>
+        <StackPanel Grid.Row="3" Margin="10,10" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Command="{Binding SubmitCommand}" Style="{DynamicResource Esri_Button}">Submit</Button>
             <Button Command="{Binding CancelCommand}" Style="{DynamicResource Esri_Button}">Cancel</Button>
         </StackPanel>

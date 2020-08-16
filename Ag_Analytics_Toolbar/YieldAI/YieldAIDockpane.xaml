@@ -20,6 +20,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" LastChildFill="true" KeyboardNavigation.TabNavigation="Local" Height="30">
@@ -48,7 +49,7 @@
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-                    <ComboBox Grid.Column="0" Margin="0,0,10,0" ItemsSource="{Binding PolygonFeatureLayers}" SelectedItem="{Binding SelectedPolygonFeatureLayer}" />
+                    <ComboBox Grid.Column="0" Margin="0,0,10,0" ItemsSource="{Binding AOILayers}" SelectedItem="{Binding SelectedAOILayer}" />
                     <Button Grid.Column="1" Background="Transparent" BorderThickness="0" ToolTip="Zoom To Layer" Command="{Binding ZoomToLayerCommand}">
                         <Image Source="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/LayerZoomTo32.png" Width="20" Height="20"/>
                     </Button>
@@ -80,12 +81,21 @@
                 </Grid>
                 <Grid Margin="0,5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10*"/>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="49*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="7*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Margin="0,0,10,0" Style="{DynamicResource Esri_TextBlockRegular}">Seeding Density</TextBlock>
-                    <TextBox Grid.Column="2" TextAlignment="Right" Text="{Binding SeedingDensity}"/>
+                    <TextBox Grid.Column="1" TextAlignment="Right" Text="{Binding SeedingDensity, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <StackPanel>
+                                    <!-- Placeholder for the TextBox itself -->
+                                    <AdornedElementPlaceholder x:Name="textBox"/>
+                                    <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
                 </Grid>
                 <TextBlock Margin="0,10,0,0" Style="{DynamicResource Esri_TextBlockRegular}">Download Folder Path</TextBlock>
                 <Grid Margin="0,0,0,5">
@@ -100,7 +110,8 @@
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-        <StackPanel Grid.Row="2" Margin="10,10" Orientation="Horizontal" HorizontalAlignment="Right">
+        <TextBlock Grid.Row="2" Margin="10,10" Style="{DynamicResource Esri_TextBlockRegular}" Text="{Binding ValidationSubmitError}" Foreground="Red"/>
+        <StackPanel Grid.Row="3" Margin="10,10" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Command="{Binding SubmitCommand}" Style="{DynamicResource Esri_Button}">Submit</Button>
             <Button Command="{Binding CancelCommand}" Style="{DynamicResource Esri_Button}">Cancel</Button>
         </StackPanel>

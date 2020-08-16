@@ -149,9 +149,11 @@
     </Compile>
     <Compile Include="Azure_Active_Directory_B2C\ShowMainWindow.cs" />
     <Compile Include="Azure_Active_Directory_B2C\TokenCacheHelper.cs" />
+    <Compile Include="ButtonAddGeoJSON.cs" />
     <Compile Include="ButtonAddAOILayers.cs" />
     <Compile Include="ButtonCreateAOILayer.cs" />
     <Compile Include="ButtonHelp.cs" />
+    <Compile Include="ButtonRasterToPolygon.cs" />
     <Compile Include="Common\ValueConverters.cs" />
     <Compile Include="CoordinateSystemDialog\CoordSysDialog.xaml.cs">
       <DependentUpon>CoordSysDialog.xaml</DependentUpon>

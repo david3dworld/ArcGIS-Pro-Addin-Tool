@@ -66,10 +66,8 @@ namespace Ag_Analytics_Toolbar
         #endregion Overrides
         public static async Task<string> GetGeoJSONFromFeatureLayer(FeatureLayer polygonFeatureLayer)
         {
-            // may use Features To Json in Geoprocessing tools
-
             return await QueuedTask.Run(() => {
-
+                
                 FeatureClass polygonFeatureClass = polygonFeatureLayer.GetFeatureClass();
 
                 QueryFilter filter = new QueryFilter
@@ -131,25 +129,30 @@ namespace Ag_Analytics_Toolbar
 
                 return geojson_string;
             });
-
         }
 
         public static async Task ConvertToGeodatabase(string input_raster, string gdb)
         {
-            await QueuedTask.Run(async () =>
-            {
-                var parameters = Geoprocessing.MakeValueArray(input_raster, gdb);
-                IGPResult result = await Geoprocessing.ExecuteToolAsync("conversion.RasterToGeodatabase", parameters);
-            });
+            var parameters = Geoprocessing.MakeValueArray(input_raster, gdb);
+            IGPResult result = await Geoprocessing.ExecuteToolAsync("conversion.RasterToGeodatabase", parameters);
         }
         
         public static async Task CopyRaster(string input_raster, string output_raster)
         {
-            await QueuedTask.Run(async () =>
-            {
-                var parameters = Geoprocessing.MakeValueArray(input_raster, output_raster);
-                IGPResult result = await Geoprocessing.ExecuteToolAsync("management.CopyRaster", parameters);
-            });
+            var parameters = Geoprocessing.MakeValueArray(input_raster, output_raster);
+            IGPResult result = await Geoprocessing.ExecuteToolAsync("management.CopyRaster", parameters);
+        }
+        
+        public static async Task RasterDomain(string input_raster)
+        {
+            string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+            string featureClassName = "AOI_Raster_Polygon_" + timestamp;
+
+            string output = Path.Combine(Project.Current.DefaultGeodatabasePath, featureClassName);
+
+            var parameters = Geoprocessing.MakeValueArray(input_raster, output, "POLYGON");
+
+            IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("ddd.RasterDomain", parameters);
         }
 
         public static async Task AddRasterLayerToMapAsync(string dataSourceUrl)
