@@ -66,17 +66,21 @@ Once an add-in has been validated and installed, you can view it in the Add-In M
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-573CBC5C-DE1D-4843-B45F-D5772F380C95-web.png)
 
 3. When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files. After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager. The Add-Ins tab provides information about available add-ins.
-=======
-This is ...
 
-''' bash
-1) Visual studio 2019 install
-[Visual Studio 2019 Download ](https://visualstudio.microsoft.com/downloads/)
-2) .Net framework4.8
-[.Net framework4.8 Download](https://dotnet.microsoft.com/download)
-3) add toolbar on arcgis pro
-[Intructions](https://awesomeopensource.com/project/Esri/arcgis-pro-sdk-community-samples)
-'''
+
+
+### Delete an add in 
+
+You can delete local add-ins from the Add-In Manager. Deleting an add-in moves the file from its system folder to the system recycle bin. 
+Shared add-ins are listed under Shared Add-ins and cannot be deleted through the Add-In Manager.
+
+> 1. On the Add-In Manager, ensure that the Add-Ins tab is selected. Under My Add-Ins, click the add-in you want to delete.
+Information about the add-in is displayed.
+
+> 2. In the lower right corner of the screen, click Delete this Add-In.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-20B05D95-6002-4D97-B70D-271710F5D6B6-web.png)
+
 ## How to add toolbar on arcgispro
 
 This is
