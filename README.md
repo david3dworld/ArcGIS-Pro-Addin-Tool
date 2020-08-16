@@ -79,7 +79,13 @@ Information about the add-in is displayed.
 
 > 2. In the lower right corner of the screen, click Delete this Add-In.
 
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-E51E3808-2E6F-41BD-B27A-C94B7CFF603E-web.png)
+
+The add-in is marked with a message that it has been deleted. It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
+
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-20B05D95-6002-4D97-B70D-271710F5D6B6-web.png)
+
+
 
 ## How to add toolbar on arcgispro
 
