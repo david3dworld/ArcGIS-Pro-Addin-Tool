@@ -1,7 +1,6 @@
 # ArcGIS-Pro-Addin-Tool
 
-<<<<<<< HEAD
-![Project Image](project-image-url)
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-20B05D95-6002-4D97-B70D-271710F5D6B6-web.png)
 
 
 ### Table of Contents
@@ -11,14 +10,12 @@
 - [How to add toolbar on arcgispro](#how-to-add-toolbar-on-arcgispro)
 - [Usage](#usage)
 - [Contributing](#contributing)
-=======
 
->>>>>>> 604952ed73bad358dda3ad608ca4fe90711469d2
+
 ## Toolbar Platform
 This is ...
 
 ## Installation
-<<<<<<< HEAD
 
 > 1) Visual studio 2019 install
 [Visual Studio 2019 Download](https://visualstudio.microsoft.com/downloads/)
@@ -82,12 +79,10 @@ This is ...
 ## How to add toolbar on arcgispro
 
 This is
->>>>>>> 604952ed73bad358dda3ad608ca4fe90711469d2
 
 
 ## Usage
 
-<<<<<<< HEAD
 ```C#
 import ()
 This is...
@@ -97,7 +92,7 @@ This is...
 import ()
 This is...
 '''
->>>>>>> 604952ed73bad358dda3ad608ca4fe90711469d2
+
 
 ## Contributing
 this is testing readme file
