@@ -1,5 +1,6 @@
 # ArcGIS-Pro-Addin-Tool
 
+<<<<<<< HEAD
 ![Project Image](project-image-url)
 
 
@@ -10,10 +11,14 @@
 - [How to add toolbar on arcgispro](#how-to-add-toolbar-on-arcgispro)
 - [Usage](#usage)
 - [Contributing](#contributing)
+=======
+
+>>>>>>> 604952ed73bad358dda3ad608ca4fe90711469d2
 ## Toolbar Platform
 This is ...
 
 ## Installation
+<<<<<<< HEAD
 
 > 1) Visual studio 2019 install
 [Visual Studio 2019 Download](https://visualstudio.microsoft.com/downloads/)
@@ -63,14 +68,36 @@ Once an add-in has been validated and installed, you can view it in the Add-In M
 2. In the list on the left, click Add-In Manager.
 
 3. When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files. After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager. The Add-Ins tab provides information about available add-ins.
+=======
+This is ...
+
+''' bash
+1) Visual studio 2019 install
+[Visual Studio 2019 Download ](https://visualstudio.microsoft.com/downloads/)
+2) .Net framework4.8
+[.Net framework4.8 Download](https://dotnet.microsoft.com/download)
+3) add toolbar on arcgis pro
+[Intructions](https://awesomeopensource.com/project/Esri/arcgis-pro-sdk-community-samples)
+'''
+## How to add toolbar on arcgispro
+
+This is
+>>>>>>> 604952ed73bad358dda3ad608ca4fe90711469d2
 
 
 ## Usage
 
+<<<<<<< HEAD
 ```C#
 import ()
 This is...
 ```
+=======
+'''C#
+import ()
+This is...
+'''
+>>>>>>> 604952ed73bad358dda3ad608ca4fe90711469d2
 
 ## Contributing
 this is testing readme file
