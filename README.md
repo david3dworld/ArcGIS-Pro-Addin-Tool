@@ -88,6 +88,56 @@ The add-in is marked with a message that it has been deleted. It is still visibl
 
 ## Usage
 
+In ArcGIS Pro, a body of related work—consisting of multiple maps, scenes, layouts, data, tables, tools, and other resources—is typically organized in a project. By default, a project is stored in its own system folder. Project files have the extension .aprx. A project also has its own geodatabase (a file with the extension .gdb) and its own toolbox (a file with the extension .tbx).
+
+When you start ArcGIS Pro, there are various ways to open saved projects and create new ones. If you work frequently with a project, you can pin it to the start page for quick access; any project you have recently saved is also accessible from the start page. You can browse to other saved projects to open them.
+
+You can create projects from one of the four system templates. Each template creates a project file and adds content to it. For example, a project created from the Map template starts with a map view containing a basemap layer. You can also start without a template. This allows you to work in ArcGIS Pro without saving a project file.
+
+New projects can also be started from project templates made by you or shared with you by colleagues. A project template is a customized starting state for a project. Recently used templates appear on the start page. You can also browse to templates.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-1.png)
+
+### ArcGIS Pro user interface
+The main parts of the ArcGIS Pro interface are the ribbon, views, and panes. For a hands-on introduction, try the Introducing ArcGIS Pro quick-start tutorial.
+
+### Ribbon
+ArcGIS Pro uses a horizontal ribbon at the top of the application window to display and organize functionality into a series of tabs. Some of these tabs (core tabs) are always present. Others (contextual tabs) appear when the application is in a particular state. For example, a set of contextual Feature Layer tabs appears when a feature layer is selected in the Contents pane.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-2.png)
+
+You can customize the ribbon and the Quick Access Toolbar.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-3.png)
+
+### Views
+Views are windows for working with maps, scenes, tables, layouts, charts, reports, and other presentations of data. A project may have many views, which can be opened and closed as needed. Several views can be open at the same time, but only one is active. The active view affects which tabs appear on the ribbon and which elements are displayed in panes, such as the Contents pane.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-4.png)
+
+### Panes
+A pane is a dockable window that displays the contents of a view (the Contents pane), the contents of a project or portal (the Catalog pane), or commands and settings related to an area of functionality, such as the Symbology and Geoprocessing panes.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-5.png)
+
+Panes offer functionality that is more advanced or complete than ribbon commands. Panes may have rows of text tabs and graphical tabs that partition and organize functionality.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-6.png)
+
+The first time you open ArcGIS Pro, the Contents and Catalog panes are open, and all other panes are closed. If you've used ArcGIS Pro before, the same panes that were open during your last session remain open the next time you start the program.
+
+You can manage panes on the ribbon, on the View tab, in the Windows group. Click Contents Contents or Catalog Pane Catalog Pane to reopen these panes if you close them. Click Reset Panes Reset Panes to choose a specific pane configuration.
+
+### Settings page
+On the Settings page, you can modify ArcGIS Pro options, configure your license and portal connections, manage add-ins, and more. The Settings page can be accessed in two ways:
+
+From an open project, click the Project tab on the ribbon.
+From the ArcGIS Pro start page, click Settings in the lower left corner.
+You can access the settings you want to change using the list on the left side of the page. You can also create, open, and save projects; open the help system; get information about ArcGIS Pro; and exit the application.
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-7.png)
+
+
 
 ```C#
 import ()
