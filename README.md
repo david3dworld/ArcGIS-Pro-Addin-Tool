@@ -4,17 +4,18 @@
 
 ### Table of Contents
 
-- [Toolbar Platform](#toolbar-platform)
-- [Installation](#installation)
-- [How to add toolbar on arcgispro](#how-to-add-toolbar-on-arcgispro)
+- [1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.](#1.-General-workflow-on-creating-a-new-tool-in-the-add-in.and-description-of-the-add-in's-framework.)
+- [2. Installation](#2.-Installation.)
+- [3. How to add toolbar on arcgispro](#3.-how-to-add-toolbar-on-arcgispro)
 - [Usage](#usage)
+- [4. main function details for the OAuth login and APIs.](#2.-main-function-details-for-the-OAuth-login-and-APIs.)
 - [Contributing](#contributing)
 
 
 ## Toolbar Platform
 This is ...
 
-## Installation
+## 2.Installation.
 
 > 1) Visual studio 2019 install
 [Visual Studio 2019 Download](https://visualstudio.microsoft.com/downloads/)
