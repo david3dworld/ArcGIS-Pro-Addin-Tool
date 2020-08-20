@@ -221,8 +221,7 @@ The results are generally are in three data types: rasters(.tif), shapefiles (.s
 .shx. Etc. in a zip file), and json string contents the data information. Users can visualize the results rasters and shapefiles in ArcGIS Pro Map
 Display, and json results in a table or interactive plots.
 
-The figure below shows some of the functionality the contractor will integrate to
-ArcGIS through the Add-in.
+
 
 
 
