@@ -130,53 +130,56 @@ The add-in is marked with a message that it has been deleted. It is still visibl
 
 ## Usage
 
-In ArcGIS Pro, a body of related work—consisting of multiple maps, scenes, layouts, data, tables, tools, and other resources—is typically organized in a project. By default, a project is stored in its own system folder. Project files have the extension .aprx. A project also has its own geodatabase (a file with the extension .gdb) and its own toolbox (a file with the extension .tbx).
+Broadly, the add-in can use oauth2 to log in to our app within
+ArcGIS Pro/ArcGIS online (Esri documentation) as well as our Web Application
+(which uses Azure B2C).
 
-When you start ArcGIS Pro, there are various ways to open saved projects and create new ones. If you work frequently with a project, you can pin it to the start page for quick access; any project you have recently saved is also accessible from the start page. You can browse to other saved projects to open them.
+After the add-in model is installed in ArcGIS Pro, a pop-up browser window  can  immediately be available for the user to create an account at our website
+and log in. 
 
-You can create projects from one of the four system templates. Each template creates a project file and adds content to it. For example, a project created from the Map template starts with a map view containing a basemap layer. You can also start without a template. This allows you to work in ArcGIS Pro without saving a project file.
+This should then authenticate the user through the ArcGIS Pro or
+Desktop clients to our app in the same way they would if someone logged into our website through a browser or used the mobile app. 
 
-New projects can also be started from project templates made by you or shared with you by colleagues. A project template is a customized starting state for a project. Recently used templates appear on the start page. You can also browse to templates.
+So, ArcGIS in this case will be the front end.
+Once logged in, the user  gain access to all functions in the add-in module and request data the same way they could, 
+if they were logged in to our site. 
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-1.png)
+The APIs will deliver data back to them such as shapefiles, rasters, operation tables,etc.
 
-### ArcGIS Pro user interface
-The main parts of the ArcGIS Pro interface are the ribbon, views, and panes. For a hands-on introduction, try the Introducing ArcGIS Pro quick-start tutorial.
+Additionally, through the add-in, user to easily access our utilities and data APIs (we will provide those APIs):
+Users can access a search pane/engine from the tabs section that
+provides a dropdown of all available data sets(shapefiles & rasters), to help them
+select the data that they want to add to their analysis.
 
-### Ribbon
-ArcGIS Pro uses a horizontal ribbon at the top of the application window to display and organize functionality into a series of tabs. Some of these tabs (core tabs) are always present. Others (contextual tabs) appear when the application is in a particular state. For example, a set of contextual Feature Layer tabs appears when a feature layer is selected in the Contents pane.
+Users can access a help tab that provides an external link Help and
+API documentation pages and allows the user to submit a request for
+assistance.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-2.png)
+Users can access the add-in content through an ArcGIS tab. 
 
-You can customize the ribbon and the Quick Access Toolbar.
+By selecting a specific API from the menu (refer to the concept tool below) and passing user’s data 
+(ex: geojson, rasters, shapefile within a zipfile), parameters
+for the API, visualization options, and working directory.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-3.png)
+The add-in can check if the parameters put in by the user meet the
+API requirements (Data format, missing parameters, etc.). 
 
-### Views
-Views are windows for working with maps, scenes, tables, layouts, charts, reports, and other presentations of data. A project may have many views, which can be opened and closed as needed. Several views can be open at the same time, but only one is active. The active view affects which tabs appear on the ribbon and which elements are displayed in panes, such as the Contents pane.
+If requirements are not met, a warning message should be sent back to users. Then the add-in will pass the data and parameters to our APIs. 
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-4.png)
+The API response  return the download URL for the result data layer (shapefiles and rasters). 
 
-### Panes
-A pane is a dockable window that displays the contents of a view (the Contents pane), the contents of a project or portal (the Catalog pane), or commands and settings related to an area of functionality, such as the Symbology and Geoprocessing panes.
+After that, the add-in  download the data to the user's working directory and display the
+results in ArcGIS Pro. 
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-5.png)
+The user can option to either download files into
+filestorage, geodatabase, arcgis enterprise, online and other standard arcgis options.
 
-Panes offer functionality that is more advanced or complete than ribbon commands. Panes may have rows of text tabs and graphical tabs that partition and organize functionality.
+The results are generally are in three data types: rasters(.tif), shapefiles (.shp,
+.shx. Etc. in a zip file), and json string contents the data information. Users can visualize the results rasters and shapefiles in ArcGIS Pro Map
+Display, and json results in a table or interactive plots.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-6.png)
+The figure below shows some of the functionality the contractor will integrate to
+ArcGIS through the Add-in.
 
-The first time you open ArcGIS Pro, the Contents and Catalog panes are open, and all other panes are closed. If you've used ArcGIS Pro before, the same panes that were open during your last session remain open the next time you start the program.
-
-You can manage panes on the ribbon, on the View tab, in the Windows group. Click Contents Contents or Catalog Pane Catalog Pane to reopen these panes if you close them. Click Reset Panes Reset Panes to choose a specific pane configuration.
-
-### Settings page
-On the Settings page, you can modify ArcGIS Pro options, configure your license and portal connections, manage add-ins, and more. The Settings page can be accessed in two ways:
-
-From an open project, click the Project tab on the ribbon.
-From the ArcGIS Pro start page, click Settings in the lower left corner.
-You can access the settings you want to change using the list on the left side of the page. You can also create, open, and save projects; open the help system; get information about ArcGIS Pro; and exit the application.
-
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-7.png)
 
 
