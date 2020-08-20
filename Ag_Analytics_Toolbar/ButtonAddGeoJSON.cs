@@ -60,8 +60,8 @@ namespace Ag_Analytics_Toolbar
                 {
                     var item = dlg.Items.First();
 
-                    ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog progressDialog;
-                    progressDialog = new ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog("Importing AOI GeoJSON Polygon ...");
+                    ProgressDialog progressDialog;
+                    progressDialog = new ProgressDialog("Importing AOI GeoJSON Polygon ...");
                     progressDialog.Show();
 
                     await ConvertGeoJSONToFeatures(item.Path);

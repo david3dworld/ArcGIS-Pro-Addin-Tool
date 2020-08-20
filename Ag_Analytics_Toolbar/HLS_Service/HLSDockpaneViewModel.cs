@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 
-using System.IO;
 using System.Web;
 using System.Net;
 using System.Reflection;
@@ -35,7 +35,6 @@ using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Core.Geoprocessing;
-
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -103,6 +102,7 @@ namespace Ag_Analytics_Toolbar.HLS_Service
                 "NDVI", "RGB","NDWI","NDBI","NDTI","UI","GCVI","MTCI","NDRE",
                 "CIR","UE","LW","AP","AGR","FFBS","BE","VW"
             };
+            
             foreach (string band_name in band_names)
             {
                 HLS_Band obj = new HLS_Band();
@@ -524,8 +524,8 @@ namespace Ag_Analytics_Toolbar.HLS_Service
                 coordSysString = selectedSpatialReference.Wkt;
             }
 
-            ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog progressDialog;
-            progressDialog = new ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog("Please wait for result response...");
+            ProgressDialog progressDialog;
+            progressDialog = new ProgressDialog("Please wait for result response...");
             progressDialog.Show();
 
             await QueuedTask.Run(async () =>
@@ -566,27 +566,24 @@ namespace Ag_Analytics_Toolbar.HLS_Service
                 if (!response.IsSuccessful)
                 {
                     //ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(response.ErrorMessage);
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Failed Result");
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Failed Result. Please try again.");
                     return;
                 }
-
-                // need to add API Error handling
 
                 dynamic jsonData = JsonConvert.DeserializeObject<dynamic>(response.Content);
 
                 try
                 {
-                    foreach (var item in jsonData)
+                    foreach (dynamic item in jsonData)
                     {
                         string filename = item.download_url;
                         await ExportFile(_downloadPath, filename);
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("No Result");
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(jsonData.msg);
                 }
-                
             });
 
             progressDialog.Hide();
@@ -618,9 +615,9 @@ namespace Ag_Analytics_Toolbar.HLS_Service
 
                     string default_path = Path.GetDirectoryName(Project.Current.URI);
 
-                    string fullPath = Path.Combine(default_path, filename);
-
                     await DownloadFile(default_path, filename);
+
+                    string fullPath = Path.Combine(default_path, filename);
 
                     string rasterFileName = Path.GetFileNameWithoutExtension(fullPath);
 
@@ -639,7 +636,7 @@ namespace Ag_Analytics_Toolbar.HLS_Service
                 {
                     await DownloadFile(download_path, filename);
 
-                    await Ag_Analytics_Module.AddRasterLayerToMapAsync(Path.Combine(download_path, filename));
+                    await Ag_Analytics_Module.AddLayerToMapAsync(Path.Combine(download_path, filename));
 
                     await Ag_Analytics_Module.SetToClassifyColorizerFromLayerName(filename, 10, "Bathymetric Scale");
                 }

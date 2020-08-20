@@ -142,7 +142,19 @@ namespace Ag_Analytics_Toolbar
             var parameters = Geoprocessing.MakeValueArray(input_raster, output_raster);
             IGPResult result = await Geoprocessing.ExecuteToolAsync("management.CopyRaster", parameters);
         }
-        
+
+        public static async Task CopyFeatures(string input, string output)
+        {
+            var parameters = Geoprocessing.MakeValueArray(input, output);
+            IGPResult result = await Geoprocessing.ExecuteToolAsync("management.CopyFeatures", parameters);
+        }
+
+        public static async Task CopyTable(string input, string output, string tableName)
+        {
+            var parameters = Geoprocessing.MakeValueArray(input, output, tableName);
+            IGPResult result = await Geoprocessing.ExecuteToolAsync("conversion.TableToTable", parameters);
+        }
+
         public static async Task RasterDomain(string input_raster)
         {
             string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -155,13 +167,13 @@ namespace Ag_Analytics_Toolbar
             IGPResult gpResult = await Geoprocessing.ExecuteToolAsync("ddd.RasterDomain", parameters);
         }
 
-        public static async Task AddRasterLayerToMapAsync(string dataSourceUrl)
+        public static async Task AddLayerToMapAsync(string dataSourceUrl)
         {
             try
             {
                 if (MapView.Active == null)
                 {
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("AddRasterLayer: map is not active.");
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("AddLayer: map is not active.");
                     return;
                 }
 
@@ -169,8 +181,7 @@ namespace Ag_Analytics_Toolbar
 
                 await QueuedTask.Run(() =>
                 {
-                    LayerFactory.Instance.CreateLayer(new Uri(@dataSourceUrl), _map, 0);
-                    
+                    LayerFactory.Instance.CreateLayer(new Uri(@dataSourceUrl), _map);
                 });
             }
             catch (Exception exc)

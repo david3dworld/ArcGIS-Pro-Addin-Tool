@@ -26,3 +26,7 @@ E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\D
 E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\Debug\Azure_Active_Directory_B2C\MainWindow.g.cs
 E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\Debug\YieldAI\YieldAIDockpane.g.cs
 E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\Debug\YieldAI\YieldAIDockpane.baml
+E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\Debug\ADAPT\ADAPTDockpane.g.cs
+E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\Debug\ADAPT\ADAPTDockpane.baml
+E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\Debug\ProfitLayer\ProfitLayerDockpane.g.cs
+E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar\Ag_Analytics_Toolbar\obj\Debug\ProfitLayer\ProfitLayerDockpane.baml

@@ -4,7 +4,7 @@
 
 ### Table of Contents
 
-- [1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.](#1.-General-workflow-on-creating-a-new-tool-in-the-add-in.and-description-of-the-add-in's-framework.)
+- [1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.](#1.-General-workflow-on-creating-a-new-tool-in-the-add-in.-and-description-of-the-add-in's-framework.)
 - [2. Installation](#2.-Installation.)
 - [3. How to add toolbar on arcgispro](#3.-how-to-add-toolbar-on-arcgispro)
 - [Usage](#usage)
@@ -12,17 +12,58 @@
 - [Contributing](#contributing)
 
 
-## Toolbar Platform
-This is ...
+## 1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.
 
+1) Allow user to make requests and display/save geospatial results from several custom
+APIs. In general the user will define an AOI (either draw, select file, or click boundary from
+base layer) of a farm field and then (depending on the API, select some preset options)
+and then retrieve the result from the API. The APIs will return JSON with links to download
+either shape/raster or other files.
+2) User Authentication thru our AzureB2C Tenant using Oauth2. A window should pop open
+to allow them to log into our web app and create an account. The add in will then
+authenticate against our backend web app and expose certain APIs to download user
+data. The APIs will be provided. 
+
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/General.png)
+
+The contractor  establish the basic authentication framework.
+Broadly, the add-in can be to use oauth2 to log in to our app within
+ArcGIS Pro/ArcGIS online (Esri documentation) as well as our Web Application(which uses Azure B2C).
+After the add-in model is installed in ArcGIS Pro, a pop-up browser window immediately be available for the user to create an account at our websiteand log in.
+Then authenticate the user through the ArcGIS Pro or
+Desktop clients to our app in the same way they would if someone logged into our website through a browser or used the mobile app. So, ArcGIS in this case will be the front end.
+Once logged in, the user can gain access to all functions in the add-in module
+and request data the same way they could, if they were logged in to our site. 
+The APIs  deliver data back to them such as shapefiles, rasters, operation tables,etc.
+ Additionally, through the add-in,  user can easily access our utilities and data
+Users can access a search pane/engine from the tabs section that
+provides a dropdown of all available data sets(shapefiles & rasters), to help them select the data that they want to add to their analysis.
+
+Users can access a help tab that provides an external link Help and
+API documentation pages and allows the user to submit a request for
+assistance.
+Users can access the add-in content through an ArcGIS tab. 
+By selecting a specific API from the menu (refer to the concept tool below) and
+passing user’s data (ex: geojson, rasters, shapefile within a zipfile), parameters
+for the API, visualization options, and working directory.
+The user can option to either download files into
+filestorage, geodatabase, arcgis enterprise, online and other standard arcgis
+options.
+The results are generally are in three data types: rasters(.tif), shapefiles (.shp,
+.shx. Etc. in a zip file), and json string contents the data information. Users can visualize the results rasters and shapefiles in ArcGIS Pro Map
+Display, and json results in a table or interactive plots.
+The figure below shows some of the functionality the contractor will integrate to
+ArcGIS through the Add-in.
 ## 2.Installation.
 
-> 1) Visual studio 2019 install
-[Visual Studio 2019 Download](https://visualstudio.microsoft.com/downloads/)
-> 2) .Net framework4.8
-[.Net framework4.8 Download](https://dotnet.microsoft.com/download/)
-> 3) add toolbar on arcgis pro
+> 1) ArcGIS Pro 2.6 install
+[ArcGIS Pro 2.6 install](https://pro.arcgis.com/en/pro-app/get-started/install-and-sign-in-to-arcgis-pro.htm)
+> 2) add toolbar on arcgis pro
 [Intructions](https://awesomeopensource.com/project/Esri/arcgis-pro-sdk-community-samples/)
+> 3) Visual studio 2019 install (for developers)
+[Visual Studio 2019 Download](https://visualstudio.microsoft.com/downloads/)
+> 4) .Net framework4.8 (for developers)
+[.Net framework4.8 Download](https://dotnet.microsoft.com/download/)
 
 
 ## How to add toolbar on arcgispro
@@ -138,25 +179,4 @@ You can access the settings you want to change using the list on the left side o
 
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Usage-7.png)
 
-
-
-```C#
-import ()
-This is...
-```
-=======
-'''C#
-import ()
-This is...
-'''
-
-
-## Contributing
-this is testing readme file
-
-Please test
-
-## License
-
-[MIT](http://google.com)
 

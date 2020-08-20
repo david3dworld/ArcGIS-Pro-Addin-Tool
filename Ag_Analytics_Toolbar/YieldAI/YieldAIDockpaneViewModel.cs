@@ -415,8 +415,8 @@ namespace Ag_Analytics_Toolbar.YieldAI
                 return;
             }
 
-            ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog progressDialog;
-            progressDialog = new ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog("Please wait for result response...");
+            ProgressDialog progressDialog;
+            progressDialog = new ProgressDialog("Please wait for result response...");
             progressDialog.Show();
 
             await QueuedTask.Run(async () =>
@@ -448,11 +448,9 @@ namespace Ag_Analytics_Toolbar.YieldAI
                 if (!response.IsSuccessful)
                 {
                     //ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show(response.ErrorMessage);
-                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Failed Result");
+                    ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Failed Result. Please try again.");
                     return;
                 }
-
-                // need to add API Error handling
 
                 dynamic jsonData = JsonConvert.DeserializeObject<dynamic>(response.Content);
 
@@ -498,10 +496,10 @@ namespace Ag_Analytics_Toolbar.YieldAI
                     Geodatabase gdb = new Geodatabase(new FileGeodatabaseConnectionPath(new Uri(@download_path)));
 
                     string default_path = Path.GetDirectoryName(Project.Current.URI);
+                    
+                    await DownloadFile(default_path, filename);
 
                     string fullPath = Path.Combine(default_path, filename);
-
-                    await DownloadFile(default_path, filename);
 
                     string rasterFileName = Path.GetFileNameWithoutExtension(fullPath);
 
@@ -520,7 +518,7 @@ namespace Ag_Analytics_Toolbar.YieldAI
                 {
                     await DownloadFile(download_path, filename);
 
-                    await Ag_Analytics_Module.AddRasterLayerToMapAsync(Path.Combine(download_path, filename));
+                    await Ag_Analytics_Module.AddLayerToMapAsync(Path.Combine(download_path, filename));
 
                     await Ag_Analytics_Module.SetToClassifyColorizerFromLayerName(filename, 10, "Slope");
                 }

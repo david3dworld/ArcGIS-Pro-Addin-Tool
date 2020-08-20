@@ -22,15 +22,11 @@ namespace Ag_Analytics_Toolbar
 {
     internal class ButtonRasterToPolygon : Button
     {
-        protected override void OnClick()
+        protected override async void OnClick()
         {
             string input_raster = "";
-            //string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-            //string featureClassName = "AOI_Raster_Polygon_" + timestamp;
-            //string output_feature = Path.Combine(Project.Current.DefaultGeodatabasePath, featureClassName);
             string output = "";
             var parameters = Geoprocessing.MakeValueArray(input_raster, output, "POLYGON");
-            
             Geoprocessing.OpenToolDialog("3d.RasterDomain", parameters);
         }
     }

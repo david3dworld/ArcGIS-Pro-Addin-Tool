@@ -63,8 +63,8 @@ namespace Ag_Analytics_Toolbar
                 ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Map is not active");
                 return;
             }
-            ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog createAOIDialog;
-            createAOIDialog = new ArcGIS.Desktop.Framework.Threading.Tasks.ProgressDialog("Creating new AOI Polygon ...");
+            ProgressDialog createAOIDialog;
+            createAOIDialog = new ProgressDialog("Creating new AOI Polygon ...");
             createAOIDialog.Show();
             string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
             string featureClassName = "AOI_Polygon_" + timestamp;
