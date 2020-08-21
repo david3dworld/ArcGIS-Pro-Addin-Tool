@@ -35,7 +35,6 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 > 4) How to add toolbar on arcgis pro
 [Intructions](https://awesomeopensource.com/project/Esri/arcgis-pro-sdk-community-samples/) 
 
-If you have already registered anything, just uninstall it and install it again with new version.
 
 ## How to add toolbar on arcgispro
 
