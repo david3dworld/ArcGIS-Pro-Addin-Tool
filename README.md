@@ -39,27 +39,11 @@ If you have already registered anything, just uninstall it and install it again 
 
 ## How to add toolbar on arcgispro
 
-### Validate and copy an add-in
+1) please download source code with zip file on git
 
-1. Before you install an add-in, it must be validated. 
+2) please save zip file in your favorite directoryType a message
 
-Validation ensures that the file is copied to the appropriate location and that there are no name conflicts. 
-
-It also guarantees that an existing version of the add-in is not overwritten by an older version.
-
-2. Locate the add-in on your computer or shared network drive.
-
-You may browse to its location using Windows File Explorer, open it from an email attachment, or download it from a portal.
-
-3. Double-click the add-in.
-
-The Esri ArcGIS Add-In Installation Utility opens.
-
-4. On the Esri ArcGIS Add-In Installation Utility, review the author, description, version, and digital signature information of the add-in.
-
-Click Install Add-In.
-
-The add-in is validated and copied to a well-known folder for use in ArcGIS Pro.
+3)  please unzip in same directory.
 
 ### View add-ins
 
