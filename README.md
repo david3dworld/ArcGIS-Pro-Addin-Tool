@@ -45,6 +45,8 @@ If you have already registered anything, just uninstall it and install it again 
 
 3)  please unzip in same directory.
 
+4) Adding addin toolbar on ArcGIS Pro.
+
 ### View add-ins
 
 Once an add-in has been validated and installed, you can view it in the Add-In Manager and use it in ArcGIS Pro. To open the Add-In Manager options, follow these steps:
