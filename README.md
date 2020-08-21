@@ -49,8 +49,6 @@ If you have already registered anything, just uninstall it and install it again 
 
 ### View add-ins
 
-Once an add-in has been validated and installed, you can view it in the Add-In Manager and use it in ArcGIS Pro. To open the Add-In Manager options, follow these steps:
-
 1. From an open project, click the Project tab on the ribbon. 
 
 Alternatively, on the ArcGIS Pro start page, click Settings Settings in the lower left corner.
@@ -63,6 +61,11 @@ Alternatively, on the ArcGIS Pro start page, click Settings Settings in the lowe
 
 The Add-Ins tab provides information about available add-ins.
 
+4. Adding addin toolbar on ArcGIS Pro.
+
+1) please run ArcGIS pro on your PC.
+
+2) Click the Project tab on ArcGIS Pro menu.
 
 
 ### Delete an add in 
