@@ -11,13 +11,15 @@
 
 ## 1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.
 
-It is a system that allows you to submit and download various APIs provided by Ag-Analytics in ArcGIS pro 2.6.
+This program is a system that allows you to submit and download various useful geographic data from many kinds of APIs provided by Ag-Analytics services on ArcGIS Pro.
 
 Ag-Analytics Farm Management Platform provides a wide range of services and data products with precision field data integration for farmers, retailers, suppliers and more.
 
-HLS (Specially Harmonized Landsat Sentinel) service, YieldAI, DEM (Digital Elevation Model) service, BoundaryAI, Cropland Data Layers, ProfitLayer, ADAPT, etc.
+For example, HLS (Specially Harmonized Landsat Sentinel) service, YieldAI, DEM (Digital Elevation Model) service, BoundaryAI, Cropland Data Layers, ProfitLayer, ADAPT, etc.
 
-This is a system that allows users to view and receive data using the Toolbar in the ArcGIS Pro environment.
+ArcGIS Pro Users can access easily to Ag-Analytics APIs from expanded addin toolbar on ArcGIS Pro and also process, manage, analysis about various api service data on ArcGIS Pro platform.
+
+This program will be help for ArcGIS pro users who want to use Ag-Analytics API.
 
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Generalworkflow.png)
 
