@@ -218,7 +218,9 @@ The user can option to either download files into
 filestorage, geodatabase, arcgis enterprise, online and other standard arcgis options.
 
 The results are generally are in three data types: rasters(.tif), shapefiles (.shp,
-.shx. Etc. in a zip file), and json string contents the data information. Users can visualize the results rasters and shapefiles in ArcGIS Pro Map
+.shx. Etc. in a zip file), and json string contents the data information. 
+
+Users can visualize the results rasters and shapefiles in ArcGIS Pro Map
 Display, and json results in a table or interactive plots.
 
 
