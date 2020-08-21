@@ -49,59 +49,59 @@ If you have already registered anything, just uninstall it and install it again 
 
 ### View add-ins
 
-1. From an open project, click the Project tab on the ribbon. 
+ 1. From an open project, click the Project tab on the ribbon. 
 
-Alternatively, on the ArcGIS Pro start page, click Settings Settings in the lower left corner.
+    Alternatively, on the ArcGIS Pro start page, click Settings Settings in the lower left corner.
 
-2. In the list on the left, click Add-In Manager.
+ 2. In the list on the left, click Add-In Manager.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
+    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
 
-3. When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files. After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager. 
+ 3. When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders      for   add-in files. After the files are located, they are installed and appear on the Add-Ins   tab of the Add-In Manager. 
 
-The Add-Ins tab provides information about available add-ins.
+   The Add-Ins tab provides information about available add-ins.
 
 4. Adding addin toolbar on ArcGIS Pro.
 
-1) please run ArcGIS pro on your PC.
+   1) please run ArcGIS pro on your PC.
 
-2) Click the Project tab on ArcGIS Pro menu.
+   2) Click the Project tab on ArcGIS Pro menu.
 
 
 ### Delete an add in 
 
-You can delete local add-ins from the Add-In Manager. 
+     You can delete local add-ins from the Add-In Manager. 
 
-Deleting an add-in moves the file from its system folder to the system recycle bin. 
+     Deleting an add-in moves the file from its system folder to the system recycle bin. 
 
-Shared add-ins are listed under Shared Add-ins and cannot be deleted through the Add-In Manager.
+     Shared add-ins are listed under Shared Add-ins and cannot be deleted through the Add-In Manager.
 
-> 1. On the Add-In Manager, ensure that the Add-Ins tab is selected. 
+ > 1. On the Add-In Manager, ensure that the Add-Ins tab is selected. 
 
-Under My Add-Ins, click the add-in you want to delete.
+       Under My Add-Ins, click the add-in you want to delete.
 
-Information about the add-in is displayed.
+       Information about the add-in is displayed.
 
-> 2. In the lower right corner of the screen, click Delete this Add-In.
+ > 2. In the lower right corner of the screen, click Delete this Add-In.
 
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png)
 
-The add-in is marked with a message that it has been deleted. 
+       The add-in is marked with a message that it has been deleted. 
 
-It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
+       It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
 
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
 
 
 ## 3. Usage
 
-1) How to login.
+    1) How to login.
 
-2) How to use HLS service
+    2) How to use HLS service
 
-3) How to use DEM service
+    3) How to use DEM service
 
-4) How to use Yield service
+    4) How to use Yield service
 
 
 
