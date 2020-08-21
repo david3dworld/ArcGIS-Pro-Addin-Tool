@@ -1,4 +1,4 @@
-# ArcGIS-Pro-Addin-Tool
+# ArcGIS-Pro-Add-in-Tool
 
 
 
@@ -44,7 +44,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
 3) please unzip in same directory.
 
-4) Adding addin toolbar on ArcGIS Pro.
+4) Adding add-in toolbar on ArcGIS Pro.
 
 ### View add-ins
 
@@ -63,6 +63,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
  4) setting add-in toolbar  in Option tab
 
  5) Restart ArcGIS Pro.
+
 
 ## 3. Usage
 
