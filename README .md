@@ -14,22 +14,7 @@
 
 ## 1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.
 
-1) Allow user to make requests and display/save geospatial results from several custom
-APIs. In general the user will define an AOI (either draw, select file, or click boundary from
-base layer) of a farm field and then (depending on the API, select some preset options)
-and then retrieve the result from the API. 
 
-The APIs will return JSON with links to download
-either shape/raster or other files.
-
-2) User Authentication thru our AzureB2C Tenant using Oauth2. 
-
-A window should pop open
-to allow them to log into our web app and create an account. 
-
-The add in will then
-authenticate against our backend web app and expose certain APIs to download user
-data. The APIs will be provided. 
 
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/General.png)
 
