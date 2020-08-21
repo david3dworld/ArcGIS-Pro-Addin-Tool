@@ -41,9 +41,9 @@ If you have already registered anything, just uninstall it and install it again 
 
 1) please download source code with zip file on git
 
-2) please save zip file in your favorite directoryType a message
+2) please save zip file in your favorite directory
 
-3)  please unzip in same directory.
+3) please unzip in same directory.
 
 4) Adding addin toolbar on ArcGIS Pro.
 
