@@ -69,7 +69,7 @@ Alternatively, on the ArcGIS Pro start page, click Settings Settings in the lowe
 
 2. In the list on the left, click Add-In Manager.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-573CBC5C-DE1D-4843-B45F-D5772F380C95-web.png)
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
 
 3. When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files. After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager. 
 
@@ -93,13 +93,13 @@ Information about the add-in is displayed.
 
 > 2. In the lower right corner of the screen, click Delete this Add-In.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-E51E3808-2E6F-41BD-B27A-C94B7CFF603E-web.png)
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png)
 
 The add-in is marked with a message that it has been deleted. 
 
 It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-20B05D95-6002-4D97-B70D-271710F5D6B6-web.png)
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
 
 
 ## 3. Usage
