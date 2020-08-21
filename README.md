@@ -48,49 +48,21 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
 ### View add-ins
 
- 1. From an open project, click the Project tab on the ribbon. 
+ 1) please run ArcGIS Pro on your pc.
 
-    Alternatively, on the ArcGIS Pro start page, click Settings Settings in the lower left corner.
+ 2) Go to ArcGIS Pro/Project tab/Add-In Manager.
 
- 2. In the list on the left, click Add-In Manager.
 
     ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
 
- 3. When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders      for   add-in files. After the files are located, they are installed and appear on the Add-Ins   tab of the Add-In Manager. 
+ 3) You can see registered add-ins, and remove add-in if you installed old version.
 
-   The Add-Ins tab provides information about available add-ins.
+    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png) 
+    
+    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
+ 4) setting add-in toolbar  in Option tab
 
-4. Adding addin toolbar on ArcGIS Pro.
-
-   1) please run ArcGIS pro on your PC.
-
-   2) Click the Project tab on ArcGIS Pro menu.
-
-
-### Delete an add in 
-
-     You can delete local add-ins from the Add-In Manager. 
-
-     Deleting an add-in moves the file from its system folder to the system recycle bin. 
-
-     Shared add-ins are listed under Shared Add-ins and cannot be deleted through the Add-In Manager.
-
- > 1. On the Add-In Manager, ensure that the Add-Ins tab is selected. 
-
-       Under My Add-Ins, click the add-in you want to delete.
-
-       Information about the add-in is displayed.
-
- > 2. In the lower right corner of the screen, click Delete this Add-In.
-
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png)
-
-       The add-in is marked with a message that it has been deleted. 
-
-       It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
-
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
-
+ 5) Restart ArcGIS Pro.
 
 ## 3. Usage
 
