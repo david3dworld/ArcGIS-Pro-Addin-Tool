@@ -14,60 +14,29 @@
 
 ## 1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.
 
+It is a system that allows you to submit and download various APIs provided by Ag-Analytics in ArcGIS pro 2.6.
 
+Ag-Analytics Farm Management Platform provides a wide range of services and data products with precision field data integration for farmers, retailers, suppliers and more.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/General.png)
+HLS (Specially Harmonized Landsat Sentinel) service, YieldAI, DEM (Digital Elevation Model) service, BoundaryAI, Cropland Data Layers, ProfitLayer, ADAPT, etc.
 
-The contractor  establish the basic authentication framework.
+This is a system that allows users to view and receive data using the Toolbar in the ArcGIS Pro environment.
 
-Broadly, the add-in can be to use oauth2 to log in to our app within
-ArcGIS Pro/ArcGIS online (Esri documentation) as well as our Web Application(which uses Azure B2C).
-
-After the add-in model is installed in ArcGIS Pro, a pop-up browser window immediately be available for the user to create an account at our websiteand log in.
-
-Then authenticate the user through the ArcGIS Pro or
-Desktop clients to our app in the same way they would if someone logged into our website through a browser or used the mobile app. So, ArcGIS in this case will be the front end.
-
-Once logged in, the user can gain access to all functions in the add-in module
-and request data the same way they could, if they were logged in to our site. 
-
-The APIs  deliver data back to them such as shapefiles, rasters, operation tables,etc.
- Additionally, through the add-in,  user can easily access our utilities and data
-Users can access a search pane/engine from the tabs section that
-provides a dropdown of all available data sets(shapefiles & rasters), to help them select the data that they want to add to their analysis.
-
-Users can access a help tab that provides an external link Help and
-API documentation pages and allows the user to submit a request for
-assistance.
-
-Users can access the add-in content through an ArcGIS tab. 
-
-By selecting a specific API from the menu (refer to the concept tool below) and
-passing user’s data (ex: geojson, rasters, shapefile within a zipfile), parameters
-for the API, visualization options, and working directory.
-
-The user can option to either download files into
-filestorage, geodatabase, arcgis enterprise, online and other standard arcgis
-options.
-
-The results are generally are in three data types: rasters(.tif), shapefiles (.shp,
-.shx. Etc. in a zip file), and json string contents the data information. Users can visualize the results rasters and shapefiles in ArcGIS Pro Map
-Display, and json results in a table or interactive plots.
-
-The figure below shows some of the functionality the contractor will integrate to
-ArcGIS through the Add-in.
+![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Generalworkflow.png)
 
 ## 2.Installation.
 
+To use the ArcGIS pro Toolbar function, the following environments must be installed.
 > 1) ArcGIS Pro 2.6 install
 [ArcGIS Pro 2.6 install](https://pro.arcgis.com/en/pro-app/get-started/install-and-sign-in-to-arcgis-pro.htm)
-> 2) add toolbar on arcgis pro
-[Intructions](https://awesomeopensource.com/project/Esri/arcgis-pro-sdk-community-samples/)
+> 2) .Net framework4.8 (for developers)
+[.Net framework4.8 Download](https://dotnet.microsoft.com/download/)
 > 3) Visual studio 2019 install (for developers)
 [Visual Studio 2019 Download](https://visualstudio.microsoft.com/downloads/)
-> 4) .Net framework4.8 (for developers)
-[.Net framework4.8 Download](https://dotnet.microsoft.com/download/)
+> 4) How to add toolbar on arcgis pro
+[Intructions](https://awesomeopensource.com/project/Esri/arcgis-pro-sdk-community-samples/) 
 
+If you have already registered anything, just uninstall it and install it again with new version.
 
 ## How to add toolbar on arcgispro
 
@@ -158,55 +127,13 @@ It is still visible in the Add-In Manager and is available in the current ArcGIS
 
 ## Usage
 
-Broadly, the add-in can use oauth2 to log in to our app within
-ArcGIS Pro/ArcGIS online (Esri documentation) as well as our Web Application
-(which uses Azure B2C).
+1) How to login.
 
-After the add-in model is installed in ArcGIS Pro, a pop-up browser window  can  immediately be available for the user to create an account at our website
-and log in. 
+2) How to use HLS service
 
-This should then authenticate the user through the ArcGIS Pro or
-Desktop clients to our app in the same way they would if someone logged into our website through a browser or used the mobile app. 
+3) How to use DEM service
 
-So, ArcGIS in this case will be the front end.
-Once logged in, the user  gain access to all functions in the add-in module and request data the same way they could, 
-if they were logged in to our site. 
-
-The APIs will deliver data back to them such as shapefiles, rasters, operation tables,etc.
-
-Additionally, through the add-in, user to easily access our utilities and data APIs (we will provide those APIs):
-Users can access a search pane/engine from the tabs section that
-provides a dropdown of all available data sets(shapefiles & rasters), to help them
-select the data that they want to add to their analysis.
-
-Users can access a help tab that provides an external link Help and
-API documentation pages and allows the user to submit a request for
-assistance.
-
-Users can access the add-in content through an ArcGIS tab. 
-
-By selecting a specific API from the menu (refer to the concept tool below) and passing user’s data 
-(ex: geojson, rasters, shapefile within a zipfile), parameters
-for the API, visualization options, and working directory.
-
-The add-in can check if the parameters put in by the user meet the
-API requirements (Data format, missing parameters, etc.). 
-
-If requirements are not met, a warning message should be sent back to users. Then the add-in will pass the data and parameters to our APIs. 
-
-The API response  return the download URL for the result data layer (shapefiles and rasters). 
-
-After that, the add-in  download the data to the user's working directory and display the
-results in ArcGIS Pro. 
-
-The user can option to either download files into
-filestorage, geodatabase, arcgis enterprise, online and other standard arcgis options.
-
-The results are generally are in three data types: rasters(.tif), shapefiles (.shp,
-.shx. Etc. in a zip file), and json string contents the data information. 
-
-Users can visualize the results rasters and shapefiles in ArcGIS Pro Map
-Display, and json results in a table or interactive plots.
+4) How to use Yield service
 
 
 
