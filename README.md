@@ -6,7 +6,7 @@
 
 - [1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.](#1.-General-workflow-on-creating-a-new-tool-in-the-add-in.-and-description-of-the-add-in's-framework.)
 - [2. Installation](#2.-Installation.)
-- [3. Usage](#3. -Usage)
+- [3. Usage](#3.-Usage)
 
 
 ## 1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.
