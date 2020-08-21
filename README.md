@@ -6,10 +6,7 @@
 
 - [1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.](#1.-General-workflow-on-creating-a-new-tool-in-the-add-in.-and-description-of-the-add-in's-framework.)
 - [2. Installation](#2.-Installation.)
-- [3. How to add toolbar on arcgispro](#3.-how-to-add-toolbar-on-arcgispro)
-- [Usage](#usage)
-- [4. main function details for the OAuth login and APIs.](#2.-main-function-details-for-the-OAuth-login-and-APIs.)
-- [Contributing](#contributing)
+- [3. Usage](#3. -Usage)
 
 
 ## 1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.
@@ -24,7 +21,7 @@ This is a system that allows users to view and receive data using the Toolbar in
 
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Generalworkflow.png)
 
-## 2.Installation.
+## 2. Installation
 
 To use the ArcGIS pro Toolbar function, the following environments must be installed.
 > 1) ArcGIS Pro 2.6 install
@@ -39,26 +36,6 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 If you have already registered anything, just uninstall it and install it again with new version.
 
 ## How to add toolbar on arcgispro
-
-[Quick Access Toolbar](https://pro.arcgis.com/en/pro-app/get-started/quick-access-toolbar.htm)
-
-> How to add a toolbox in ArcGIS pro.
-
-
-To add a toolbox to your project, click Insert > Toolbox > Add Toolbox and browse to the toolbox, or right-click any toolbox in a folder connection and select Add To Project. 
-
-A reference to the toolbox will be saved with your project in the Toolboxes node in the Catalog pane.
-
-You can share add-ins easily because they do not require an additional installation program. 
-You can add add-ins to your machine from a shared network location by double-clicking the file in Windows File Explorer or by manually copying the file to a well-known folder. 
-
-Add-ins can also be shared by email or from a portal.
-
-
-> Note :
-Add-ins are developed with the ArcGIS Pro SDK 2.6 for the Microsoft .NET Framework. 
-
-Visit the ArcGIS for Developers site to build your first add-in.
 
 ### Validate and copy an add-in
 
@@ -125,7 +102,7 @@ It is still visible in the Add-In Manager and is available in the current ArcGIS
 ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/GUID-20B05D95-6002-4D97-B70D-271710F5D6B6-web.png)
 
 
-## Usage
+## 3. Usage
 
 1) How to login.
 
