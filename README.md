@@ -4,12 +4,12 @@
 
 ### Table of Contents
 
-- [1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.](#1.-General-workflow-on-creating-a-new-tool-in-the-add-in.-and-description-of-the-add-in's-framework.)
+- [1. Overview.](#1.-Overview.)
 - [2. Installation](#2.-Installation.)
 - [3. Usage](#3.-Usage)
 
 
-## 1. General workflow on creating a new tool in the add-in. and description of the add-in's framework.
+## 1. Overview.
 
 This program is a system that allows you to submit and download various useful geographic data from many kinds of APIs provided by Ag-Analytics services on ArcGIS Pro.
 
