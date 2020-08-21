@@ -29,7 +29,7 @@ This is a system that allows users to view and receive data using the Toolbar in
 To use the ArcGIS pro Toolbar function, the following environments must be installed.
 > 1) ArcGIS Pro 2.6 install
 [ArcGIS Pro 2.6 install](https://pro.arcgis.com/en/pro-app/get-started/install-and-sign-in-to-arcgis-pro.htm)
-> 2) .Net framework4.8 (for developers)
+> 2) .Net framework4.8 
 [.Net framework4.8 Download](https://dotnet.microsoft.com/download/)
 > 3) Visual studio 2019 install (for developers)
 [Visual Studio 2019 Download](https://visualstudio.microsoft.com/downloads/)
