@@ -17,7 +17,7 @@ Ag-Analytics Farm Management Platform provides a wide range of services and data
 
 For example, HLS (Specially Harmonized Landsat Sentinel) service, YieldAI, DEM (Digital Elevation Model) service, BoundaryAI, Cropland Data Layers, ProfitLayer, ADAPT, etc.
 
-ArcGIS Pro Users can access easily to Ag-Analytics APIs from expanded addin toolbar on ArcGIS Pro and also process, manage, analysis about various api service data on ArcGIS Pro platform.
+ArcGIS Pro Users can access easily to Ag-Analytics APIs from expended addin toolbar on ArcGIS Pro and also process, manage, analysis about various api service data on ArcGIS Pro platform.
 
 This program will be help for ArcGIS pro users who want to use Ag-Analytics API.
 
@@ -38,31 +38,53 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
 ## How to add toolbar on arcgispro
 
-1) please download source code with zip file on git
+   1) please download source code with zip file on git
 
-2) please save zip file in your favorite directory
+   2) please save zip file in your favorite directory
 
-3) please unzip in same directory.
+   3) please unzip in same directory.
 
-4) Adding add-in toolbar on ArcGIS Pro.
+   4) Adding add-in toolbar on ArcGIS Pro.
 
-### View add-ins
+### Set up add-ins
 
- 1) please run ArcGIS Pro on your pc.
+   1) please run ArcGIS Pro on your pc.
 
- 2) Go to ArcGIS Pro/Project tab/Add-In Manager.
+   2) Go to ArcGIS Pro/Project tab/Add-In Manager.
+
+   When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files.
+   
+   After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager.
+   
+   The Add-Ins tab provides information about available add-ins.
 
 
     ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
 
- 3) You can see registered add-ins, and remove add-in if you installed old version.
+   3) You can see registered add-ins, and remove add-in if you installed old version.
 
-    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png) 
+      You can delete local add-ins from the Add-In Manager.
+    
+
+      ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png) 
+
+      The add-in is marked with a message that it has been deleted. 
+      
+      It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
     
     ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
- 4) setting add-in toolbar  in Option tab
+   
+   4) setting add-in toolbar  in Option tab
 
- 5) Restart ArcGIS Pro.
+    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/option.png)
+
+      
+
+   5) Restart ArcGIS Pro.
+
+      noted : If you do not understand this process, please refer to the following link.
+
+      Or you can see and refer to our video.
 
 
 ## 3. Usage
