@@ -52,11 +52,11 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    2) Go to ArcGIS Pro/Project tab/Add-In Manager.
 
-   When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files.
+      When you open the Add-In Manager page, ArcGIS Pro searches specified well-known folders for add-in files.
    
-   After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager.
+      After the files are located, they are installed and appear on the Add-Ins tab of the Add-In Manager.
    
-   The Add-Ins tab provides information about available add-ins.
+      The Add-Ins tab provides information about available add-ins.
 
 
    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
@@ -79,14 +79,14 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       ArcGIS Pro searches these folders for add-ins each time you start the application. 
       
       This option is useful if you use a network location to share add-ins within your organization.
-      
+
    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/option.png)
       
 
    5) Restart ArcGIS Pro.
 
          noted : If you do not understand this process, please refer to the following link.
-
+   [get-started](https://pro.arcgis.com/en/pro-app/get-started/manage-add-ins.htm/)
          Or you can see and refer to our videos.
 
 
