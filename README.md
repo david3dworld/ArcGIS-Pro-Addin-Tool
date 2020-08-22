@@ -81,9 +81,9 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    5) Restart ArcGIS Pro.
 
-      noted : If you do not understand this process, please refer to the following link.
+         noted : If you do not understand this process, please refer to the following link.
 
-      Or you can see and refer to our videos.
+         Or you can see and refer to our videos.
 
 
 ## 3. Usage
