@@ -59,14 +59,14 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
    The Add-Ins tab provides information about available add-ins.
 
 
-    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
+   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
 
    3) You can see registered add-ins, and remove add-in if you installed old version.
 
       You can delete local add-ins from the Add-In Manager.
     
 
-      ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png) 
+   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png) 
 
       The add-in is marked with a message that it has been deleted. 
       
@@ -76,7 +76,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
    
    4) setting add-in toolbar  in Option tab
 
-      ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/option.png)
+   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/option.png)
       
 
    5) Restart ArcGIS Pro.
