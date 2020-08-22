@@ -74,8 +74,12 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
     
    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
    
-   4) setting add-in toolbar  in Option tab
-
+   4) Setting add-in toolbar  in Option tab
+      
+      ArcGIS Pro searches these folders for add-ins each time you start the application. 
+      
+      This option is useful if you use a network location to share add-ins within your organization.
+      
    ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/option.png)
       
 
