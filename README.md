@@ -72,7 +72,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
     
-      ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
+   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
    
    4) setting add-in toolbar  in Option tab
 
