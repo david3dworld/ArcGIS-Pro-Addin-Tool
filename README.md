@@ -105,7 +105,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
    
    [HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service)
 
-      if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
+   if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
 
 
 
@@ -116,11 +116,13 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       The service consists of a POST request where the user can pass a GeoJSON boundary, desired output projection as an EPSG code, and a resolution in degrees lat/lon.
 
-      noted : If you want to know more details , please refer to the following link.
-
+      noted : If you want to know more details , please refer to the following link. 
+      
    [DEM-Service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)
 
-      if you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
+   
+
+   if you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
 
    4) How to use Yield service
 
