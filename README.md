@@ -38,21 +38,21 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
 ## How to add toolbar on arcgispro
 
-   1) please download source code with zip file on git
+   1) Please download source code with zip file on git
 
       If you are not developer, you can only download Ag_Analytics_Toolbar/[bin/Debug]/Ag_Analytics_Toolbar.esriAddinX
 
       If Ag_Analytics_Toolbar.esriAddinX file dosn't exsist, please download source code with zip file.
 
-   2) please save zip file in your favorite directory
+   2) Please save zip file in your favorite directory
 
-   3) please unzip in same directory.
+   3) Please unzip in same directory.
 
-      if Ag_Analytics_Toolbar.esriAddinX file doesn't exsist in Ag_Analytics_Toolbar/[bin/Debug] directory, you can rebuild again on visual studio.
+      If Ag_Analytics_Toolbar.esriAddinX file doesn't exsist in Ag_Analytics_Toolbar/[bin/Debug] directory, you can rebuild again on visual studio.
 
    4) Adding add-in toolbar on ArcGIS Pro.
 
-      please run Ag_Analytics_Toolbar.sln file on visual studio platform.
+      Please run Ag_Analytics_Toolbar.sln file on visual studio platform.
 
       Click rebuild on Build menu of visual studio, and then run by start button.
 
@@ -60,7 +60,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
 ### Set up add-ins
 
-   1) please run ArcGIS Pro on your pc.
+   1) Please run ArcGIS Pro on your pc.
 
    2) Go to ArcGIS Pro/Project tab/Add-In Manager.
 
@@ -97,7 +97,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    5) Restart ArcGIS Pro.
 
-         noted : If you do not understand this process, please refer to the following link.
+         Noted : If you do not understand this process, please refer to the following link.
    [get-started](https://pro.arcgis.com/en/pro-app/get-started/manage-add-ins.htm)
 
          Or you can see and refer to our videos.
@@ -126,10 +126,8 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       More details is shown in video link for Ag-analytics HLS servce.
 
-      if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video [[Ag-Analytics HLS-Service Video](https://www.dropbox.com/s/skmu2k7kpf9snq0/HLS%20service%20.mp4?dl=0)]
+      If you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video [[Ag-Analytics HLS-Service Video](https://www.dropbox.com/s/skmu2k7kpf9snq0/HLS%20service%20.mp4?dl=0)]
       
-
-
    3) How to use DEM service
 
       The Ag-Analytics® DEM Service API allows for clipping boundaries to the 10 meter USGS DEM map of the United States. 
@@ -141,11 +139,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics DEM service Video](https://www.dropbox.com/s/tkl3iw2y95ghacy/DEM%20Service.mp4?dl=0)]
       
-   
-
-   
-
-      if you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
+      If you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
 
    4) How to use YieldAI service
 
@@ -155,7 +149,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       ![Project Image](images/YieldAI-service.png)
 
-      if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video. [Coming soon]
+      If you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video. [Coming soon]
    
 
    5) How to use ADAPT service 
@@ -164,13 +158,13 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       Note: If you download adapt zipped file in any geodatabase, files is saved in not only your geodatabase also your arcgis project directory with new directory name.
 
-      if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ADAPT service Video](https://www.dropbox.com/s/2250wjdkpa4o1o5/ADAPT%20Service.mp4?dl=0)]
+      If you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ADAPT service Video](https://www.dropbox.com/s/2250wjdkpa4o1o5/ADAPT%20Service.mp4?dl=0)]
 
    6) How to use ProfitLayer service 
 
       ![Project Image](images/ProfitLayer.png)
 
-      if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ProfitLayer service Video](https://www.dropbox.com/s/y63hm210qzy7jvb/ProfitLayer%20Service.mp4?dl=0)]
+      If you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ProfitLayer service Video](https://www.dropbox.com/s/y63hm210qzy7jvb/ProfitLayer%20Service.mp4?dl=0)]
     
 
 
