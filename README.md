@@ -42,6 +42,8 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       If you are not developer, you can only download Ag_Analytics_Toolbar/[bin/Debug]/Ag_Analytics_Toolbar.esriAddinX
 
+      If Ag_Analytics_Toolbar.esriAddinX file dosn't exsist, please download source code with zip file.
+
    2) please save zip file in your favorite directory
 
    3) please unzip in same directory.
