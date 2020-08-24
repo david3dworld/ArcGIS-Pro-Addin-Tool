@@ -101,7 +101,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       This service provides information on cloud cover, statistics, Normalized Difference Vegetation Index in addition to MSI bands information.
       
-      Noted : If you want to know more details , please refer to the following link [Ag-Analytics HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service).
+      Noted : If you want to know more details , please refer to the following link [[Ag-Analytics HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service)].
    
       Most of Ag-analytics APIs require AOI(Area Of Interest) of raster format(.tif), vector format(shapefile), GeoJSON format(.geojson), so Ag-analytics add-in toolbar provide adding/editing/converting aoi polygons from polygon feature classes/raster dataset in geodatabase, shapefile(.shp), raster(.tif), GeoJSON(.geojson) in directory  on arcgis pro.
 
@@ -122,7 +122,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       The service consists of a POST request where the user can pass a GeoJSON boundary, desired output projection as an EPSG code, and a resolution in degrees lat/lon.
 
-      Noted : If you want to know more details , please refer to the following link [Ag-Analytics DEM-Service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service).
+      Noted : If you want to know more details , please refer to the following link [[Ag-Analytics DEM-Service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)].
       
    
 
@@ -132,7 +132,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    4) How to use Yield service
 
-      Noted : If you want to know more details , please refer to the following link [Ag-Analytics Yield service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service).
+      Noted : If you want to know more details , please refer to the following link [[Ag-Analytics Yield service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)].
 
       if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
    
