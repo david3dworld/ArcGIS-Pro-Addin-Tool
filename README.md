@@ -97,11 +97,11 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    2) How to use HLS service
 
-      The Ag-Analytics® Harmonized Landsat-Sentinel Service (HLS) API provides the service in which a user can provide an area-of-interest (AOI) with additional customized options to 
+      The Ag-Analytics HLS API provides service in which a user can provide a polygon in specific formats with additional customized options to retrieve the dynamics of their land at various times 
       
-      trieve the dynamics of their land at various times from the Landsat-8 and Sentinel-2 satellites. 
-
-      noted : If you want to know more details , please refer to the following link.
+      from the Landsat-8 and Sentinel-2 satellites. 
+      
+      This service provides information on cloud cover, statistics, Normalized Difference Vegetation Index in addition to MSI bands information.
    
    [HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service)
 
