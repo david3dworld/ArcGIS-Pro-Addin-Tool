@@ -52,6 +52,8 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    4) Adding add-in toolbar on ArcGIS Pro.
 
+      please run Ag_Analytics_Toolbar.sln file on visual studio platform.
+
 ### Set up add-ins
 
    1) please run ArcGIS Pro on your pc.
