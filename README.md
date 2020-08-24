@@ -17,7 +17,7 @@ Ag-Analytics Farm Management Platform provides a wide range of services and data
 
 For example, HLS (Specially Harmonized Landsat Sentinel) service, YieldAI, DEM (Digital Elevation Model) service, BoundaryAI, Cropland Data Layers, ProfitLayer, ADAPT, etc.
 
-ArcGIS Pro users can access easily to Ag-Analytics APIs from extended addin toolbar on ArcGIS Pro and also process, manage, analysis about various api service data on ArcGIS Pro platform.
+ArcGIS Pro users can access easily to Ag-Analytics APIs from extended add-in toolbar on ArcGIS Pro and also process, manage, analysis about various api service data on ArcGIS Pro platform.
 
 This program will be help for ArcGIS pro users who want to use Ag-Analytics API.
 
