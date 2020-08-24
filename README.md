@@ -125,8 +125,9 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    4) How to use Yield service
 
+      noted : If you want to know more details , please refer to the following link[Yield service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service).
 
-      if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video [Yield service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service).  
+      if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
    
 
    5) How to use ADAPT service 
