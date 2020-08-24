@@ -93,9 +93,9 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
 ## 3. Usage
 
-    1) How to login.
+   1) How to login.
 
-    2) How to use HLS service
+   2) How to use HLS service
 
       The Ag-Analytics® Harmonized Landsat-Sentinel Service (HLS) API provides the service in which a user can provide an area-of-interest (AOI) with additional customized options to 
       
@@ -105,12 +105,12 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
    
    [HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service)
 
-   If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
+    If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
 
 
 
 
-    3) How to use DEM service
+   3) How to use DEM service
 
     The Ag-Analytics® DEM Service API allows for clipping boundaries to the 10 meter USGS DEM map of the United States. 
     
@@ -122,24 +122,20 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
     If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
 
-    4) How to use Yield service
+   4) How to use Yield service
 
 
     If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
    
    [Yield service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)
 
-    5) How to use ADAPT service 
+   5) How to use ADAPT service 
 
-    If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
    
-   [ADAPT-Service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)
 
-    6) How to use ProfitLayer service 
+   6) How to use ProfitLayer service 
 
-    If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
-   
-   [ProfitLayer-Service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)
+    
 
 
 
