@@ -134,7 +134,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       The service consists of a POST request where the user can pass a GeoJSON boundary, desired output projection as an EPSG code, and a resolution in degrees lat/lon.
 
-      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics Yield service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)]
+      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics DEM service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)
 
       ![Project Image](images/DEM-service.png)
           
@@ -144,7 +144,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       The Ag-Analytics® Yield Forecast API uses Artificial Intelligence algorithms to forecast the yield on a given field, based on geospatial data.
 
-      Noted : If you want to know more details, please refer to the following link. [[Ag-Analytics DEM service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)]
+      Noted : If you want to know more details, please refer to the following link. [[Ag-Analytics YieldAI service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)]
 
       ![Project Image](images/YieldAI-service.png)
 
