@@ -27,7 +27,7 @@ This program will be help for ArcGIS pro users who want to use Ag-Analytics API.
 
 To use the ArcGIS pro Toolbar function, the following environments must be installed.
 > 1) ArcGIS Pro 2.5/2.6 install
-[ArcGIS Pro 2.6 install](https://pro.arcgis.com/en/pro-app/get-started/install-and-sign-in-to-arcgis-pro.htm)
+[ArcGIS Pro 2.5/2.6 install](https://pro.arcgis.com/en/pro-app/get-started/install-and-sign-in-to-arcgis-pro.htm)
 > 2) .Net framework4.8 
 [.Net framework4.8 Download](https://dotnet.microsoft.com/download/)
 > 3) Visual studio 2019 install (for developers)
