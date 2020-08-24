@@ -59,7 +59,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       The Add-Ins tab provides information about available add-ins.
 
 
-   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/add-ins.png)
+   ![Project Image](images/add-ins.png)
 
    3) You can see registered add-ins, and remove add-in if you installed old version.
 
