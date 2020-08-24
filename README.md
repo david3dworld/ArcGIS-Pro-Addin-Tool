@@ -90,7 +90,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
          Or you can see and refer to our videos.
    
-      More details is shown in video link for how to add add-in toolbar on arcgis pro.[[How to add add-in toolbar on arcgis pro Video](https://www.dropbox.com/s/gvrqmmw56vq0up1/how%20to%20add%20add-in%20toolbar%20on%20arcgis%20pro.mp4?dl=0)].
+      More details is shown in video link for how to add add-in toolbar on arcgis pro.[[How to add add-in toolbar on arcgis pro Video](https://www.dropbox.com/s/gvrqmmw56vq0up1/how%20to%20add%20add-in%20toolbar%20on%20arcgis%20pro.mp4?dl=0)]
 
 ## 3. Usage
 
@@ -102,7 +102,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       This service provides information on cloud cover, statistics, Normalized Difference Vegetation Index in addition to MSI bands information.
       
-      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service)].
+      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service)]
    
       Most of Ag-analytics APIs require AOI(Area Of Interest) of raster format(.tif), vector format(shapefile), GeoJSON format(.geojson), so Ag-analytics add-in toolbar provide adding/editing/converting aoi polygons from polygon feature classes/raster dataset in geodatabase, shapefile(.shp), raster(.tif), GeoJSON(.geojson) in directory  on arcgis pro.
 
@@ -110,9 +110,11 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       ArcgGIS pro Ag-analytics toolbar provide to download in your geodatabase or folder API result, and then load api result of raster or vector format with approximate symbology on ArcGIS Pro users can see download progressing from video link of every API.
 
+      ![Project Image](images/HLS-Service.png)
+
       More details is shown in video link for Ag-analytics HLS servce.
 
-      if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video [[Ag-Analytics HLS-Service Video](https://www.dropbox.com/s/skmu2k7kpf9snq0/HLS%20service%20.mp4?dl=0)].
+      if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video [[Ag-Analytics HLS-Service Video](https://www.dropbox.com/s/skmu2k7kpf9snq0/HLS%20service%20.mp4?dl=0)]
       
 
 
@@ -122,7 +124,10 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       The service consists of a POST request where the user can pass a GeoJSON boundary, desired output projection as an EPSG code, and a resolution in degrees lat/lon.
 
-      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics DEM service Video](https://www.dropbox.com/s/tkl3iw2y95ghacy/DEM%20Service.mp4?dl=0)].
+      ![Project Image](images/DEM-service.png)
+
+
+      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics DEM service Video](https://www.dropbox.com/s/tkl3iw2y95ghacy/DEM%20Service.mp4?dl=0)]
       
    
 
@@ -134,20 +139,26 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       The Ag-Analytics® Yield Forecast API uses Artificial Intelligence algorithms to forecast the yield on a given field, based on geospatial data.
 
-      Noted : If you want to know more details, please refer to the following link. [[Ag-Analytics YieldAI service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)].
+      Noted : If you want to know more details, please refer to the following link. [[Ag-Analytics YieldAI service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)]
+
+      ![Project Image](images/YieldAI-service.png)
 
       if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video. [coming on soon]
    
 
    5) How to use ADAPT service 
 
+      ![Project Image](images/ADAPT.png)
+      
       Note: If you download adapt zipped file in any geodatabase, files is saved in not only your geodatabase also your arcgis project directory with new directory name.
 
-      if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ADAPT service Video](https://www.dropbox.com/s/2250wjdkpa4o1o5/ADAPT%20Service.mp4?dl=0)].
+      if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ADAPT service Video](https://www.dropbox.com/s/2250wjdkpa4o1o5/ADAPT%20Service.mp4?dl=0)]
 
    6) How to use ProfitLayer service 
 
-      if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ProfitLayer service Video](https://www.dropbox.com/s/y63hm210qzy7jvb/ProfitLayer%20Service.mp4?dl=0)].
+      ![Project Image](images/ProfitLayer.png)
+
+      if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ProfitLayer service Video](https://www.dropbox.com/s/y63hm210qzy7jvb/ProfitLayer%20Service.mp4?dl=0)]
     
 
 
