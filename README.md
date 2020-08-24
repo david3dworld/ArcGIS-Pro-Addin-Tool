@@ -54,6 +54,10 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       please run Ag_Analytics_Toolbar.sln file on visual studio platform.
 
+      Click rebuild on Build menu of visual studio, and then run by start button.
+
+      If you don't want to use visual studio, please refer to below instructions.
+
 ### Set up add-ins
 
    1) please run ArcGIS Pro on your pc.
