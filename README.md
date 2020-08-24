@@ -139,13 +139,13 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    5) How to use ADAPT service 
 
-      if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
+      if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
 
       Note: If you download adapt zipped file in any geodatabase, files is saved in not only your geodatabase also your arcgis project directory with new directory name.
 
    6) How to use ProfitLayer service 
 
-      if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
+      if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
     
 
 
