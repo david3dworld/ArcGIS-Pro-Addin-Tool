@@ -42,21 +42,11 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       If you are not developer, you can only download Ag_Analytics_Toolbar/[bin/Debug]/Ag_Analytics_Toolbar.esriAddinX
 
-      If Ag_Analytics_Toolbar.esriAddinX file dosn't exsist, please download source code with zip file.
-
    2) Please save zip file in your favorite directory
 
    3) Please unzip in same directory.
 
-      If Ag_Analytics_Toolbar.esriAddinX file doesn't exsist in Ag_Analytics_Toolbar/[bin/Debug] directory, you can rebuild again on visual studio.
-
    4) Adding add-in toolbar on ArcGIS Pro.
-
-      Please run Ag_Analytics_Toolbar.sln file on visual studio platform.
-
-      Click rebuild on Build menu of visual studio, and then run by start button.
-
-      If you don't want to use visual studio, please refer to below instructions.
 
 ### Set up add-ins
 
