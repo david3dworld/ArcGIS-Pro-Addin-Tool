@@ -21,7 +21,7 @@ ArcGIS Pro users can access easily to Ag-Analytics APIs from extended addin tool
 
 This program will be help for ArcGIS pro users who want to use Ag-Analytics API.
 
-![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/Generalworkflow.png)
+![Project Image](/images/Generalworkflow.png)
 
 ## 2. Installation
 
@@ -66,13 +66,13 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       You can delete local add-ins from the Add-In Manager.
     
 
-   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-addin.png) 
+   ![Project Image](images/del-addin.png) 
 
       The add-in is marked with a message that it has been deleted. 
       
       It is still visible in the Add-In Manager and is available in the current ArcGIS Pro session.
     
-   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/del-msg.png)
+   ![Project Image](images/del-msg.png)
    
    4) Setting add-in toolbar  in Option tab
       
@@ -80,7 +80,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       This option is useful if you use a network location to share add-ins within your organization.
 
-   ![Project Image](https://github.com/DavidFullstackdev/ArcGIS-Pro-Addin-Tool/blob/master/images/option.png)
+   ![Project Image](images/option.png)
       
 
    5) Restart ArcGIS Pro.
