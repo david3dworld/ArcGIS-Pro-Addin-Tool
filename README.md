@@ -97,13 +97,22 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    2) How to use HLS service
 
-      The Ag-Analytics HLS API provides service in which a user can provide a polygon in specific formats with additional customized options to retrieve the dynamics of their land at various times 
-      from the Landsat-8 and Sentinel-2 satellites. 
+      The Ag-Analytics HLS API provides service in which a user can provide a polygon in specific formats with additional customized options to retrieve the dynamics of their land at various times from the Landsat-8 and Sentinel-2 satellites. 
       
       This service provides information on cloud cover, statistics, Normalized Difference Vegetation Index in addition to MSI bands information.
       
       noted : If you want to know more details , please refer to the following link [Ag-Analytics HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service).
    
+      Most of Ag-analytics APIs require AOI(Area Of Interest) of raster format(.tif), vector format(shapefile), GeoJSON format(.geojson), so Ag-analytics add-in toolbar provide adding/editing/converting aoi polygons from polygon feature 
+      
+      classes/raster dataset in geodatabase, shapefile(.shp), raster(.tif), GeoJSON(.geojson) in directory  on arcgis pro.
+
+      More details is shown in video link for Ag-analytics HLS servce.
+
+      Ag-analytics APIs provide also to dwonload result files such as raster format(.tif), vector format(zipped shapefile).
+
+      ArcgGIS pro Ag-analytics toolbar provide to download in your geodatabase or folder API result, and then load api result of raster or vector format with approximate symbology on ArcGIS Pro users can see download progressing from video link of every API.
+
       if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
 
 
