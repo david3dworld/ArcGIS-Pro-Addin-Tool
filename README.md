@@ -134,12 +134,11 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       The service consists of a POST request where the user can pass a GeoJSON boundary, desired output projection as an EPSG code, and a resolution in degrees lat/lon.
 
+      Noted : If you want to know more details , please refer to the following link.
+
       ![Project Image](images/DEM-service.png)
-
-
-      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics DEM service Video](https://www.dropbox.com/s/tkl3iw2y95ghacy/DEM%20Service.mp4?dl=0)]
-      
-      If you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
+          
+      If you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics DEM service Video](https://www.dropbox.com/s/tkl3iw2y95ghacy/DEM%20Service.mp4?dl=0)]
 
    4) How to use YieldAI service
 
