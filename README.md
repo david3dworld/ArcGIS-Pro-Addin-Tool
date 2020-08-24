@@ -105,7 +105,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
    
    [HLS-Service](https://ag-analytics.portal.azure-api.net/docs/services/harmonized-landsat-sentinel-service/operations/hls-service)
 
-    If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
+    if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
 
 
 
@@ -120,21 +120,22 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    [DEM-Service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)
 
-    If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
+    if you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
 
    4) How to use Yield service
 
 
-    If you want to know about how to add toolbar on arcgispro , please refer to the following this Video.
+    if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
    
    [Yield service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)
 
    5) How to use ADAPT service 
 
-   
+    if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
 
    6) How to use ProfitLayer service 
 
+    if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro , please refer to the following this Video.
     
 
 
