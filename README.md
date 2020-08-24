@@ -21,7 +21,7 @@ ArcGIS Pro users can access easily to Ag-Analytics APIs from extended add-in too
 
 This program will be help for ArcGIS pro users who want to use Ag-Analytics API.
 
-![Project Image](images/Overview.png)
+![Project Image](/images/Generalworkflow.png)
 
 ## 2. Installation
 
