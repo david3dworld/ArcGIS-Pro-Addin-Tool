@@ -48,6 +48,8 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    3) please unzip in same directory.
 
+      if Ag_Analytics_Toolbar.esriAddinX file doesn't exsist in Ag_Analytics_Toolbar/[bin/Debug] directory, you can rebuild again on visual studio.
+
    4) Adding add-in toolbar on ArcGIS Pro.
 
 ### Set up add-ins
