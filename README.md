@@ -143,7 +143,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       ![Project Image](images/YieldAI-service.png)
 
-      if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video. [coming on soon]
+      if you want to know how to use YieldAI service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video. [coming soon]
    
 
    5) How to use ADAPT service 
