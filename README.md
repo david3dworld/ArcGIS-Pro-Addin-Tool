@@ -90,7 +90,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
          Or you can see and refer to our videos.
    
-      More details is shown in video link for how to add addin toolbar on arcgis pro.[[How to add addin toolbar on arcgis pro Video](https://www.dropbox.com/s/gvrqmmw56vq0up1/how%20to%20add%20add-in%20toolbar%20on%20arcgis%20pro.mp4?dl=0)].
+      More details is shown in video link for how to add add-in toolbar on arcgis pro.[[How to add add-in toolbar on arcgis pro Video](https://www.dropbox.com/s/gvrqmmw56vq0up1/how%20to%20add%20add-in%20toolbar%20on%20arcgis%20pro.mp4?dl=0)].
 
 ## 3. Usage
 
