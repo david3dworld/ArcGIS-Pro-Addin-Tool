@@ -130,7 +130,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       if you want to know how to use DEM service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
 
-   4) How to use Yield service
+   4) How to use YieldAI service
 
       The Ag-Analytics® Yield Forecast API uses Artificial Intelligence algorithms to forecast the yield on a given field, based on geospatial data.
 
