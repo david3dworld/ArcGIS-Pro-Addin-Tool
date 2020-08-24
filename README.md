@@ -89,7 +89,8 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
    [get-started](https://pro.arcgis.com/en/pro-app/get-started/manage-add-ins.htm)
 
          Or you can see and refer to our videos.
-
+   
+      More details is shown in video link for how to add addin toolbar on arcgis pro.[[How to add addin toolbar on arcgis pro Video](https://www.dropbox.com/s/gvrqmmw56vq0up1/how%20to%20add%20add-in%20toolbar%20on%20arcgis%20pro.mp4?dl=0)].
 
 ## 3. Usage
 
@@ -111,9 +112,8 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
       More details is shown in video link for Ag-analytics HLS servce.
 
-      if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
-
-
+      if you want to know how to use HLS service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video [[Ag-Analytics HLS-Service Video](https://www.dropbox.com/s/skmu2k7kpf9snq0/HLS%20service%20.mp4?dl=0)].
+      
 
 
    3) How to use DEM service
@@ -122,7 +122,7 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       
       The service consists of a POST request where the user can pass a GeoJSON boundary, desired output projection as an EPSG code, and a resolution in degrees lat/lon.
 
-      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics DEM-Service](https://ag-analytics.portal.azure-api.net/docs/services/dem-service/operations/dem-service)].
+      Noted : If you want to know more details , please refer to the following link. [[Ag-Analytics DEM service Video](https://www.dropbox.com/s/tkl3iw2y95ghacy/DEM%20Service.mp4?dl=0)].
       
    
 
@@ -141,13 +141,13 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
 
    5) How to use ADAPT service 
 
-      if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
-
       Note: If you download adapt zipped file in any geodatabase, files is saved in not only your geodatabase also your arcgis project directory with new directory name.
+
+      if you want to know how to use ADAPT service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ADAPT service Video](https://www.dropbox.com/s/2250wjdkpa4o1o5/ADAPT%20Service.mp4?dl=0)].
 
    6) How to use ProfitLayer service 
 
-      if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.
+      if you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ProfitLayer service Video](https://www.dropbox.com/s/y63hm210qzy7jvb/ProfitLayer%20Service.mp4?dl=0)].
     
 
 
