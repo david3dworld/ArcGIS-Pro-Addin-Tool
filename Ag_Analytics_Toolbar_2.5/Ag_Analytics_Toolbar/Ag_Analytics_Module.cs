@@ -73,6 +73,9 @@ namespace Ag_Analytics_Toolbar
                     WhereClause = "1=1"
                 };
 
+                SpatialReference inSR = polygonFeatureLayer.GetSpatialReference();
+                SpatialReference outputSR = SpatialReferenceBuilder.CreateSpatialReference(4326); // wgs84
+
                 RowCursor rowCursor = polygonFeatureLayer.Search(filter);
                 
                 List<object> _features = new List<object>();
@@ -82,9 +85,11 @@ namespace Ag_Analytics_Toolbar
                     var row = rowCursor.Current;
                     Feature feature = row as Feature;
 
-                    Polygon polygon = feature.GetShape() as Polygon;
+                    Polygon inPolygon = feature.GetShape() as Polygon;
 
-                    IReadOnlyList<Coordinate2D> pts = polygon.Copy2DCoordinatesToList();
+                    Polygon outPolygon = GeometryEngine.Instance.Project(inPolygon, outputSR) as Polygon;
+
+                    IReadOnlyList<Coordinate2D> pts = outPolygon.Copy2DCoordinatesToList();
 
                     List<object> _coordinates = new List<object>();
                     List<object> _main_coordinates = new List<object>();

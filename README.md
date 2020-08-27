@@ -154,6 +154,9 @@ To use the ArcGIS pro Toolbar function, the following environments must be insta
       ![Project Image](images/ProfitLayer.png)
 
       If you want to know how to use ProfitLayer service on Ag-analytics toolbar of ArcGIS Pro, please refer to the following this Video.[[Ag-Analytics ProfitLayer service Video](https://www.dropbox.com/s/y63hm210qzy7jvb/ProfitLayer%20Service.mp4?dl=0)]
+      
+      
+    
     
 
 

@@ -156,12 +156,35 @@ namespace Ag_Analytics_Toolbar.DEM_Service
 
         private void OnLayersAddedEvent(LayerEventsArgs args)
         {
-            SetAOILayers();
+            bool flag = false;
+            foreach (var layer in args.Layers)
+            {
+                if (layer is FeatureLayer)
+                {
+                    flag = true;
+                }
+            }
+            if (flag)
+            {
+                SetAOILayers();
+            }
         }
 
         private void OnLayersRemovedEvent(LayerEventsArgs args)
         {
-            SetAOILayers();
+
+            bool flag = false;
+            foreach (var layer in args.Layers)
+            {
+                if (layer is FeatureLayer)
+                {
+                    flag = true;
+                }
+            }
+            if (flag)
+            {
+                SetAOILayers();
+            }
         }
 
         public void CancelExecute()
@@ -435,7 +458,7 @@ namespace Ag_Analytics_Toolbar.DEM_Service
                 request.AddParameter("aoi", aoi);
 
                 request.AddParameter("Resolution", _cellSize);
-                request.AddParameter("Elevation_Index", _checkElevationIndex);
+                request.AddParameter("Elevation_Index", _checkElevationIndex ? "True" : "False");
 
                 request.AddParameter("Projection", outputSpatialReference.Wkt);
 

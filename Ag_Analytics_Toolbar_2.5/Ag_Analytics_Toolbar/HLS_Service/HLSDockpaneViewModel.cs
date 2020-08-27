@@ -163,14 +163,34 @@ namespace Ag_Analytics_Toolbar.HLS_Service
         
         private void OnLayersAddedEvent(LayerEventsArgs args)
         {
-
-            SetAOILayers();
+            bool flag = false;
+            foreach (var layer in args.Layers)
+            {
+                if (layer is FeatureLayer)
+                {
+                    flag = true;
+                }
+            }
+            if (flag) {
+                SetAOILayers();
+            }
         }
 
         private void OnLayersRemovedEvent(LayerEventsArgs args)
         {
 
-            SetAOILayers();
+            bool flag = false;
+            foreach (var layer in args.Layers)
+            {
+                if (layer is FeatureLayer)
+                {
+                    flag = true;
+                }
+            }
+            if (flag)
+            {
+                SetAOILayers();
+            }
         }
         
         /// <summary>

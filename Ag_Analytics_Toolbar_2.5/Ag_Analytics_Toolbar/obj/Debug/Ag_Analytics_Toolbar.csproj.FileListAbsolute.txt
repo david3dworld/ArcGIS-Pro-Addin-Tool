@@ -63,4 +63,3 @@ E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar-2.5\Ag_Analytics_Toolbar\o
 E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar-2.5\Ag_Analytics_Toolbar\obj\Debug\Ag_Analytics_Toolbar.csproj.CopyComplete
 E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar-2.5\Ag_Analytics_Toolbar\obj\Debug\Ag_Analytics_Toolbar.dll
 E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar-2.5\Ag_Analytics_Toolbar\obj\Debug\Ag_Analytics_Toolbar.pdb
-E:\ArcGIS-Pro\ArcGISAddIn-master\Ag_Analytics_Toolbar-2.5\Ag_Analytics_Toolbar\obj\Debug\Ag_Analytics_Toolbar.csprojAssemblyReference.cache

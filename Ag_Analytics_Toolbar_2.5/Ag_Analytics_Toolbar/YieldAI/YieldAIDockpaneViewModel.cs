@@ -171,12 +171,35 @@ namespace Ag_Analytics_Toolbar.YieldAI
 
         private void OnLayersAddedEvent(LayerEventsArgs args)
         {
-            SetAOILayers();
+            bool flag = false;
+            foreach (var layer in args.Layers)
+            {
+                if (layer is FeatureLayer)
+                {
+                    flag = true;
+                }
+            }
+            if (flag)
+            {
+                SetAOILayers();
+            }
         }
 
         private void OnLayersRemovedEvent(LayerEventsArgs args)
         {
-            SetAOILayers();
+
+            bool flag = false;
+            foreach (var layer in args.Layers)
+            {
+                if (layer is FeatureLayer)
+                {
+                    flag = true;
+                }
+            }
+            if (flag)
+            {
+                SetAOILayers();
+            }
         }
 
         public async void ZoomToLayerExecute()
@@ -434,9 +457,9 @@ namespace Ag_Analytics_Toolbar.YieldAI
                 client.Timeout = -1;
                 var request = new RestRequest(Method.POST);
 
-                //request.AlwaysMultipartFormData = true;
+                request.AlwaysMultipartFormData = true;
                 //request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-                request.AddHeader("Content-Type", "application/json");
+                //request.AddHeader("Content-Type", "application/json");
                 request.AddParameter("MODELNAME", _selectedModelName);
                 request.AddParameter("SHAPE", aoi);
 
@@ -450,8 +473,8 @@ namespace Ag_Analytics_Toolbar.YieldAI
 
                 string scalarVariables_string = JsonConvert.SerializeObject(scalarVariables);
                 
-                request.AddParameter("ScalarVariables", scalarVariables_string);
-
+                request.AddParameter("ScalarVariables", scalarVariables);
+                
                 IRestResponse response = client.Execute(request);
 
                 if (!response.IsSuccessful)
